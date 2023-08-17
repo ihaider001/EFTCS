@@ -1,0 +1,29 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2023-08-17 14:20:12.733293",
+  "name": "In Review",
+  "style": "",
+  "workflow_state_name": "In Review"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2023-08-17 14:21:32.198290",
+  "name": "Require Change",
+  "style": "",
+  "workflow_state_name": "Require Change"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2023-08-17 14:23:23.322313",
+  "name": "Draft",
+  "style": "",
+  "workflow_state_name": "Draft"
+ }
+]

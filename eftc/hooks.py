@@ -215,3 +215,41 @@ app_license = "MIT"
 # auth_hooks = [
 #	"eftc.auth.validate"
 # ]
+fixtures = [
+     {
+        "dt": "Custom Field", "filters":
+        [
+            [
+                "name", "in", [
+                    "Quotation-cr_number",
+                    "Quotation-vat_number"
+                ]]  
+        ]},
+         {
+        "dt": "Workflow State", "filters":
+        [
+            [
+                "name", "in", [
+                   "In Review",
+                   "Require Change",
+                   "Draft"
+                ]]  
+        ]},
+        {
+        "dt": "Workflow Action Master", "filters":
+        [
+            [
+                "name", "in", [
+                  "Require Change",
+                  "Save"
+                ]]  
+        ]},
+        {
+        "dt": "Workflow", "filters":
+        [
+            [
+                "name", "in", [
+                    "Quotation"
+                ]]  
+        ]}
+]
