@@ -118,13 +118,16 @@ app_license = "MIT"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-#	"*": {
-#		"on_update": "method",
-#		"on_cancel": "method",
-#		"on_trash": "method"
-#	}
-# }
+doc_events = {
+	# "*": {
+	# 	"on_update": "method",
+	# 	"on_cancel": "method",
+	# 	"on_trash": "method"
+	# }
+    "Sales Order":{
+        "after_insert":"eftc.hook.sales_order.after_insert"
+    }
+}
 
 # Scheduled Tasks
 # ---------------
@@ -222,7 +225,8 @@ fixtures = [
             [
                 "name", "in", [
                     "Quotation-cr_number",
-                    "Quotation-vat_number"
+                    "Quotation-vat_number",
+                    "is_notified"
                 ]]  
         ]},
          {
@@ -253,3 +257,13 @@ fixtures = [
                 ]]  
         ]}
 ]
+
+
+
+scheduler_events = {
+	"cron": {
+		"0/15 * * * *": [
+			"eftc.hook.notification.quotation_follow_up_notofication"
+		]
+    }
+}
