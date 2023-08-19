@@ -1,0 +1,88 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-08-18 13:33:40.873949",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "attendee_name",
+  "card_no",
+  "certificate_no",
+  "course",
+  "iquama_no",
+  "issue_date",
+  "validity",
+  "upload_photo",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "attendee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Attendee Name"
+  },
+  {
+   "fieldname": "card_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Card No."
+  },
+  {
+   "fieldname": "certificate_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Certificate No."
+  },
+  {
+   "fieldname": "course",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Course "
+  },
+  {
+   "fieldname": "iquama_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "IQUAMA NO."
+  },
+  {
+   "fieldname": "issue_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Issue Date"
+  },
+  {
+   "fieldname": "validity",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Validity "
+  },
+  {
+   "fieldname": "upload_photo",
+   "fieldtype": "Attach",
+   "in_list_view": 1,
+   "label": "Upload Photo"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Present\nNA"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-08-18 14:57:48.854285",
+ "modified_by": "Administrator",
+ "module": "EFTC APP",
+ "name": "Attendees Table",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

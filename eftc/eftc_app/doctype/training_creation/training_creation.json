@@ -1,0 +1,248 @@
+{
+ "actions": [],
+ "autoname": "TN-.####",
+ "creation": "2023-08-18 13:17:41.262474",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "clientcustomer_name",
+  "column_break_b8e80",
+  "type",
+  "company",
+  "section_break_pg10a",
+  "trainer_name",
+  "trainer_email",
+  "column_break_9rq51",
+  "attendance_sheet_number",
+  "contact_number",
+  "section_break_fpmav",
+  "course",
+  "location",
+  "column_break_ax0v0",
+  "start_time",
+  "end_time",
+  "amended_from",
+  "section_break_zvcy7",
+  "travel_from",
+  "column_break_vwunb",
+  "travel_to",
+  "column_break_w2hcm",
+  "training_location",
+  "column_break_yl1g3",
+  "total_participants",
+  "section_break_3nqu1",
+  "training_mode",
+  "column_break_8kski",
+  "training_location_google_link",
+  "section_break_mkk1j",
+  "training_meeting_link",
+  "attendees_section",
+  "upload_attendence",
+  "attendees"
+ ],
+ "fields": [
+  {
+   "fieldname": "clientcustomer_name",
+   "fieldtype": "Link",
+   "label": "Client/Customer Name",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "column_break_b8e80",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "Seminar\nTheory\nWorkshop\nConference\nExam\nInternet\nSelf-Study",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "section_break_pg10a",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "trainer_name",
+   "fieldtype": "Link",
+   "label": "Trainer Name",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "trainer_name.prefered_email",
+   "fieldname": "trainer_email",
+   "fieldtype": "Data",
+   "label": "Trainer Email"
+  },
+  {
+   "fieldname": "column_break_9rq51",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "attendance_sheet_number",
+   "fieldtype": "Data",
+   "label": "Attendance Sheet Number"
+  },
+  {
+   "fetch_from": "trainer_name.cell_number",
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "label": "Contact Number"
+  },
+  {
+   "fieldname": "section_break_fpmav",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "course",
+   "fieldtype": "Data",
+   "label": "Course"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Location",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_ax0v0",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "start_time",
+   "fieldtype": "Datetime",
+   "label": "Start Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "end_time",
+   "fieldtype": "Datetime",
+   "label": "End Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Training Creation",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_zvcy7",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "travel_from",
+   "fieldtype": "Data",
+   "label": "Travel From"
+  },
+  {
+   "fieldname": "training_mode",
+   "fieldtype": "Select",
+   "label": "Training Mode ",
+   "options": "Online\nOfflne"
+  },
+  {
+   "fieldname": "column_break_vwunb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "travel_to",
+   "fieldtype": "Data",
+   "label": "Travel To"
+  },
+  {
+   "fieldname": "column_break_w2hcm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "training_location",
+   "fieldtype": "Data",
+   "label": "Training Location"
+  },
+  {
+   "fieldname": "training_location_google_link",
+   "fieldtype": "Data",
+   "label": "Training Location Google Link"
+  },
+  {
+   "fieldname": "column_break_yl1g3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_participants",
+   "fieldtype": "Data",
+   "label": "Total Participants"
+  },
+  {
+   "fieldname": "section_break_mkk1j",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "training_meeting_link",
+   "fieldtype": "Small Text",
+   "label": "Training Meeting Link"
+  },
+  {
+   "fieldname": "attendees_section",
+   "fieldtype": "Section Break",
+   "label": "Attendees"
+  },
+  {
+   "fieldname": "upload_attendence",
+   "fieldtype": "Button",
+   "label": "Upload Attendence"
+  },
+  {
+   "fieldname": "attendees",
+   "fieldtype": "Table",
+   "label": "Attendees",
+   "options": "Attendees Table"
+  },
+  {
+   "fieldname": "section_break_3nqu1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_8kski",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-08-18 14:55:45.116992",
+ "modified_by": "Administrator",
+ "module": "EFTC APP",
+ "name": "Training Creation",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
