@@ -1,0 +1,105 @@
+# Copyright (c) 2023, NestorBird and contributors
+# For license information, please see license.txt
+
+import frappe
+from frappe.model.document import Document
+from frappe import _
+import json
+
+
+
+
+
+
+class TrainingSchedule(Document):
+    def on_submit(self):
+        # Creating Certificate for every attendee on submit of Training schedule
+        for attendee in self.attendees:
+            certificate =frappe.get_doc({
+                "doctype":"Certificate",
+                "attendee":attendee.attendee,
+                "course":attendee.course,
+                "iquama_no":attendee.iquama_no,
+                "issue_date":attendee.issue_date,
+                "validity":attendee.validity,
+                "upload_photo":attendee.upload_photo
+            }).insert(ignore_permissions = True)
+            url = "<a href='{0}/app/certificate/{1}'>{2}</a>".format(frappe.utils.get_url(),certificate.name,certificate.attendee_name)
+            frappe.msgprint(
+                _("Certificate Created for {0}".format(frappe.bold(url))),
+                indicator="green",
+                alert=1,
+                )
+              
+
+
+@frappe.whitelist()
+@frappe.validate_and_sanitize_search_inputs
+def attendee_dropdown(doctype, txt, searchfield, start, page_len, filters, as_dict=False):
+    return frappe.db.sql("""Select
+                         name ,
+                         attendee_name
+                         from `tabAttendee Register`
+                         """
+                        )
+
+@frappe.whitelist()
+def create_sales_invoice(values,docname):
+    # Converting Selected Values into Json
+    json_data = json.loads(values)
+
+    # Training Schedule Details
+    training_schedule = frappe.get_doc("Training Schedule", docname)
+
+    # Sales Order Details
+    sales_order_details = frappe.get_doc("Sales Order",training_schedule.sales_order)
+    
+    # Creating Sales Invoice 
+    sales_invoice = frappe.new_doc("Sales Invoice")
+    sales_invoice.customer = sales_order_details.customer
+    sales_invoice.training_schedule = docname
+    for item in sales_order_details.items:
+        sales_invoice.append("items",{
+            "item_code":item.get("item_code"),
+            "qty":item.get("qty"),
+            "amount":item.get("amount")
+        })
+    for attendee in json_data["undefined"]:
+        sales_invoice.append("attendee",{
+            "attendee":attendee.get("attendee"),
+            "course":attendee.get("course"),
+            "issue_date":attendee.get("issue_date"),
+            "validity":attendee.get("validity")
+        })
+    sales_invoice.save(ignore_permissions=1)
+    url = "<a href='{0}/app/sales-invoice/{1}'>{1}</a>".format(frappe.utils.get_url(),sales_invoice.name)
+    frappe.msgprint(
+        _("Sales Invoice Created {0}".format(frappe.bold(url))),
+        indicator="green",
+        alert=1,
+        )
+
+
+    # Updating Training Schedule child table 
+    for attendees in training_schedule.attendees:
+        if  attendees.get("name") in list(map(lambda x : x["name"],json_data["undefined"])):
+            attendees.sales_invoice=sales_invoice.name
+    training_schedule.save()        
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

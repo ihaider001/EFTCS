@@ -37,6 +37,9 @@ app_license = "MIT"
 # Home Pages
 # ----------
 
+doctype_js = {
+    "Quotation":"public/js/quotation.js"
+}
 # application home page (will override Website Settings)
 # home_page = "login"
 
@@ -125,7 +128,7 @@ doc_events = {
 	# 	"on_trash": "method"
 	# }
     "Sales Order":{
-        "after_insert":"eftc.hook.sales_order.after_insert"
+        "on_submit":"eftc.hook.sales_order.on_submit"
     }
 }
 
@@ -226,7 +229,13 @@ fixtures = [
                 "name", "in", [
                     "Quotation-cr_number",
                     "Quotation-vat_number",
-                    "is_notified"
+                    "is_notified",
+                    "Quotation-qr_code_url",
+                    "Item-zone",
+                    "Item-subgroup",
+                    "Sales Invoice-attendee",
+                    "Sales Invoice-attendee_data",
+                    "Sales Invoice-training_schedule"
                 ]]  
         ]},
          {

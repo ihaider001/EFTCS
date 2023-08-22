@@ -1,0 +1,87 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-08-21 21:00:47.925983",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "attendee",
+  "attendee_name",
+  "course",
+  "iquama_no",
+  "issue_date",
+  "validity",
+  "upload_photo"
+ ],
+ "fields": [
+  {
+   "fieldname": "attendee",
+   "fieldtype": "Link",
+   "label": "Attendee",
+   "options": "Attendee Register"
+  },
+  {
+   "fetch_from": "attendee.attendee_name",
+   "fieldname": "attendee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Attendee Name"
+  },
+  {
+   "fieldname": "course",
+   "fieldtype": "Link",
+   "label": "Course",
+   "options": "Item"
+  },
+  {
+   "fieldname": "iquama_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "IQUAMA NO"
+  },
+  {
+   "fieldname": "issue_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Issue Date"
+  },
+  {
+   "fieldname": "validity",
+   "fieldtype": "Date",
+   "label": "Validity"
+  },
+  {
+   "fieldname": "upload_photo",
+   "fieldtype": "Attach",
+   "label": "Upload Photo"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-08-21 21:17:55.676360",
+ "modified_by": "Administrator",
+ "module": "EFTC APP",
+ "name": "Certificate",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
