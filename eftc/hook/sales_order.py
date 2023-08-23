@@ -8,7 +8,7 @@ def on_submit(doc , event):
     for item in doc.items:
         training_event = frappe.get_doc({
             "doctype":"Training Schedule",
-            "course":item.item_name,
+            "course":item.item_code,
             "clientcustomer_name":doc.customer,
             "company":get_default_company(),
             "type":"Seminar",
