@@ -21,9 +21,9 @@ class TrainingSchedule(Document):
                 "course":attendee.get("course"),
                 "iquama_no":attendee.get("iquama_no"),
                 "issue_date":attendee.get("issue_date"),
-                "validity":attendee.get("validity"),
                 "upload_photo":attendee.get("upload_photo"),
                 "sales_invoice":attendee.get("sales_invoice"),
+                "training_schedule":self.name
             }).insert(ignore_permissions = True)
             url = "<a href='{0}/app/certificate/{1}'>{2}</a>".format(frappe.utils.get_url(),certificate.name,certificate.attendee_name)
             frappe.msgprint(

@@ -12,11 +12,12 @@
   "course",
   "iquama_no",
   "issue_date",
-  "validity",
+  "expiry_date",
   "upload_photo",
   "sales_invoice",
   "qr_code_url",
-  "qr_image"
+  "qr_image",
+  "training_schedule"
  ],
  "fields": [
   {
@@ -37,7 +38,8 @@
    "fieldname": "course",
    "fieldtype": "Link",
    "label": "Course",
-   "options": "Item"
+   "options": "Item",
+   "read_only": 1
   },
   {
    "fieldname": "iquama_no",
@@ -50,12 +52,8 @@
    "fieldname": "issue_date",
    "fieldtype": "Date",
    "in_list_view": 1,
-   "label": "Issue Date"
-  },
-  {
-   "fieldname": "validity",
-   "fieldtype": "Date",
-   "label": "Validity"
+   "label": "Issue Date",
+   "read_only": 1
   },
   {
    "fieldname": "upload_photo",
@@ -80,11 +78,25 @@
    "fieldtype": "Attach",
    "hidden": 1,
    "label": "Qr Image"
+  },
+  {
+   "default": "1",
+   "fieldname": "expiry_date",
+   "fieldtype": "Select",
+   "label": "Expiry Date (Years)",
+   "options": "1\n2"
+  },
+  {
+   "fieldname": "training_schedule",
+   "fieldtype": "Link",
+   "label": "Training Schedule",
+   "options": "Training Schedule",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-08-23 22:06:34.257881",
+ "modified": "2023-08-25 12:04:52.914131",
  "modified_by": "Administrator",
  "module": "EFTC APP",
  "name": "Certificate",
