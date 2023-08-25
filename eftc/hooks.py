@@ -38,7 +38,9 @@ app_license = "MIT"
 # ----------
 
 doctype_js = {
-    "Quotation":"public/js/quotation.js"
+    "Quotation":"public/js/quotation.js",
+    "Purchase Invoice":"public/js/purchase_invoice.js",
+    "Purchase Order":"public/js/purchase_order.js"
 }
 # application home page (will override Website Settings)
 # home_page = "login"
@@ -129,6 +131,15 @@ doc_events = {
 	# }
     "Sales Order":{
         "on_submit":"eftc.hook.sales_order.on_submit"
+    },
+    "Quotation":{
+        "on_submit":"eftc.hook.quotation.generate_qr_code"
+    },
+    "Purchase Invoice":{
+        "on_submit":"eftc.hook.purchase_invoice.generate_qr_code"
+    },
+    "Purchase Order":{
+        "on_submit":"eftc.hook.purchase_order.generate_qr_code"
     }
 }
 
@@ -235,7 +246,13 @@ fixtures = [
                     "Item-subgroup",
                     "Sales Invoice-attendee",
                     "Sales Invoice-attendee_data",
-                    "Sales Invoice-training_schedule"
+                    "Sales Invoice-training_schedule",
+                    "Quotation-qr_image",
+                    "Quotation-qr_code_validity_in_days",
+                    "Purchase Order-qr_image",
+                    "Purchase Order-qr_code_url",
+                    "Purchase Invoice-qr_code_url",
+                    "Purchase Invoice-qr_image"
                 ]]  
         ]},
          {
@@ -264,7 +281,17 @@ fixtures = [
                 "name", "in", [
                     "Quotation"
                 ]]  
-        ]}
+        ]},
+        {
+        "dt": "Property Setter", "filters":
+        [
+            [
+                "name", "in", [
+                   "Sales Invoice-main-links_order",
+                   "Sales Order-main-links_order",
+                   
+                ]]  
+        ]},
 ]
 
 
@@ -276,3 +303,7 @@ scheduler_events = {
 		]
     }
 }
+
+
+
+after_migrate="eftc.hook.after_migrate.main"

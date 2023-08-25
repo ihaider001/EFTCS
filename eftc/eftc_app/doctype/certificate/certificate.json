@@ -13,7 +13,10 @@
   "iquama_no",
   "issue_date",
   "validity",
-  "upload_photo"
+  "upload_photo",
+  "sales_invoice",
+  "qr_code_url",
+  "qr_image"
  ],
  "fields": [
   {
@@ -58,11 +61,30 @@
    "fieldname": "upload_photo",
    "fieldtype": "Attach",
    "label": "Upload Photo"
+  },
+  {
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "label": "Sales Invoice",
+   "options": "Sales Invoice",
+   "read_only": 1
+  },
+  {
+   "fieldname": "qr_code_url",
+   "fieldtype": "Small Text",
+   "hidden": 1,
+   "label": "qr_code_url"
+  },
+  {
+   "fieldname": "qr_image",
+   "fieldtype": "Attach",
+   "hidden": 1,
+   "label": "Qr Image"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-08-21 21:17:55.676360",
+ "modified": "2023-08-23 22:06:34.257881",
  "modified_by": "Administrator",
  "module": "EFTC APP",
  "name": "Certificate",
@@ -77,6 +99,7 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "select": 1,
    "share": 1,
    "write": 1
   }

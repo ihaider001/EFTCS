@@ -17,12 +17,13 @@ class TrainingSchedule(Document):
         for attendee in self.attendees:
             certificate =frappe.get_doc({
                 "doctype":"Certificate",
-                "attendee":attendee.attendee,
-                "course":attendee.course,
-                "iquama_no":attendee.iquama_no,
-                "issue_date":attendee.issue_date,
-                "validity":attendee.validity,
-                "upload_photo":attendee.upload_photo
+                "attendee":attendee.get("attendee"),
+                "course":attendee.get("course"),
+                "iquama_no":attendee.get("iquama_no"),
+                "issue_date":attendee.get("issue_date"),
+                "validity":attendee.get("validity"),
+                "upload_photo":attendee.get("upload_photo"),
+                "sales_invoice":attendee.get("sales_invoice"),
             }).insert(ignore_permissions = True)
             url = "<a href='{0}/app/certificate/{1}'>{2}</a>".format(frappe.utils.get_url(),certificate.name,certificate.attendee_name)
             frappe.msgprint(
