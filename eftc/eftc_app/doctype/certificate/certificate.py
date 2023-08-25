@@ -14,7 +14,7 @@ from frappe.model.document import Document
 class Certificate(Document):
 	def after_insert(self):
 		# Converting String Date into Datetime 
-		expiry_date = datetime.datetime.strptime(self.validity, "%Y-%m-%d")
+		expiry_date = datetime.datetime(2023, 8, 24, 2, 24)
 		
 
 		# Setting Expiry Date for QR Code 
@@ -42,3 +42,8 @@ class Certificate(Document):
 
 		# Updating QR image in Certificate
 		self.db_set("qr_image", _file.file_url)
+
+
+def abc():
+	current_date = frappe.utils.today()
+	print(current_date)

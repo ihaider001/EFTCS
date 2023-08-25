@@ -252,7 +252,10 @@ fixtures = [
                     "Purchase Order-qr_image",
                     "Purchase Order-qr_code_url",
                     "Purchase Invoice-qr_code_url",
-                    "Purchase Invoice-qr_image"
+                    "Purchase Invoice-qr_image",
+                    "Sales Invoice Item-awarding_body",
+                    "Sales Order Item-awarding_body",
+                    "Quotation Item-awarding_body"
                 ]]  
         ]},
          {
