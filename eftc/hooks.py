@@ -255,7 +255,25 @@ fixtures = [
                     "Purchase Invoice-qr_image",
                     "Sales Invoice Item-awarding_body",
                     "Sales Order Item-awarding_body",
-                    "Quotation Item-awarding_body"
+                    "Quotation Item-awarding_body",
+                    "Quotation-customer_name_in_arabic",
+                    "Item-item_name_in_arabic",
+                    "Quotation-sales_representative",
+                    "Quotation-sales_representative_mobile_number",
+                    "Quotation-training_mode",
+                    "Quotation-location",
+                    "Address-cr_no_in_arabic",
+                    "Address-cr_no",
+                    "Address-vat_number_in_arabic",
+                    "Address-vat_number_",
+                    "Address-arabic_coutry",
+                    "Address-postal_code_in_arabic",
+                    "Address-state_province_in_arabic",
+                    "Address-city__time_in_arabic",
+                    "Address-address_line_2_in_arabic",
+                    "Address-address_title_in_arabic_",
+                    "Address-address_in_arabic",
+                    "Address-phone_in_arabic"
                 ]]  
         ]},
          {
@@ -292,6 +310,8 @@ fixtures = [
                 "name", "in", [
                    "Sales Invoice-main-links_order",
                    "Sales Order-main-links_order",
+                   "Address-address_line2-label",
+                   "Address-address_line1-label"
                    
                 ]]  
         ]},

@@ -185,7 +185,8 @@
   {
    "fieldname": "total_participants",
    "fieldtype": "Data",
-   "label": "Total Participants"
+   "label": "Total Participants",
+   "read_only": 1
   },
   {
    "fieldname": "section_break_mkk1j",
@@ -236,7 +237,7 @@
    "link_fieldname": "training_schedule"
   }
  ],
- "modified": "2023-08-25 12:03:22.772271",
+ "modified": "2023-08-25 16:30:54.300881",
  "modified_by": "Administrator",
  "module": "EFTC APP",
  "name": "Training Schedule",

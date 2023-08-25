@@ -7,25 +7,19 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "attendee",
+  "other__certificate_number",
   "attendee_name",
   "course",
   "iquama_no",
   "issue_date",
-  "expiry_date",
   "upload_photo",
   "sales_invoice",
   "qr_code_url",
   "qr_image",
-  "training_schedule"
+  "training_schedule",
+  "expiry"
  ],
  "fields": [
-  {
-   "fieldname": "attendee",
-   "fieldtype": "Link",
-   "label": "Attendee",
-   "options": "Attendee Register"
-  },
   {
    "fetch_from": "attendee.attendee_name",
    "fieldname": "attendee_name",
@@ -80,23 +74,27 @@
    "label": "Qr Image"
   },
   {
-   "default": "1",
-   "fieldname": "expiry_date",
-   "fieldtype": "Select",
-   "label": "Expiry Date (Years)",
-   "options": "1\n2"
-  },
-  {
    "fieldname": "training_schedule",
    "fieldtype": "Link",
    "label": "Training Schedule",
    "options": "Training Schedule",
    "read_only": 1
+  },
+  {
+   "fieldname": "expiry",
+   "fieldtype": "Date",
+   "label": "Expiry  Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "other__certificate_number",
+   "fieldtype": "Data",
+   "label": "Other  Certificate Number"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-08-25 12:04:52.914131",
+ "modified": "2023-08-25 16:40:07.590537",
  "modified_by": "Administrator",
  "module": "EFTC APP",
  "name": "Certificate",

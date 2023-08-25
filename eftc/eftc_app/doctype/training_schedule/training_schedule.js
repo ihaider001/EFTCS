@@ -18,7 +18,10 @@ frappe.ui.form.on('Training Schedule', {
 		);
 		}
 	},
-
+	
+	before_save:function(frm){
+		frm.set_value("total_participants" , frm.doc.attendees.length)
+	},
 	create_sales_invoice: function(frm) {
 		let attendee_data = []
 		for ( var attendee in frm.doc.attendees){
@@ -61,7 +64,7 @@ frappe.ui.form.on('Training Schedule', {
 });
 
 frappe.ui.form.on('Attendees Table', {
-	attendee:function(frm,cdt,cdn){
+	attendee_name:function(frm,cdt,cdn){
 		frappe.model.set_value(cdt, cdn, 'course', cur_frm.doc.course)
 		cur_frm.refresh_fields("course");
 	}

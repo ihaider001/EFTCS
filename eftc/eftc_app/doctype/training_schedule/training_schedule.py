@@ -15,15 +15,20 @@ class TrainingSchedule(Document):
     def on_submit(self):
         # Creating Certificate for every attendee on submit of Training schedule
         for attendee in self.attendees:
+            year = int(attendee.get("validity"))
+            days = year*365
+
+            expiry_date = frappe.utils.add_days(attendee.get("issue_date"),days),
             certificate =frappe.get_doc({
                 "doctype":"Certificate",
-                "attendee":attendee.get("attendee"),
+                "attendee_name":attendee.get("attendee_name"),
                 "course":attendee.get("course"),
                 "iquama_no":attendee.get("iquama_no"),
                 "issue_date":attendee.get("issue_date"),
                 "upload_photo":attendee.get("upload_photo"),
                 "sales_invoice":attendee.get("sales_invoice"),
-                "training_schedule":self.name
+                "training_schedule":self.name,
+                "expiry":expiry_date
             }).insert(ignore_permissions = True)
             url = "<a href='{0}/app/certificate/{1}'>{2}</a>".format(frappe.utils.get_url(),certificate.name,certificate.attendee_name)
             frappe.msgprint(
