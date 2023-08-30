@@ -37,10 +37,15 @@ app_license = "MIT"
 # Home Pages
 # ----------
 
+doctype_list_js={
+    "Training Schedule" :"public/js/training_list.js"
+}
+
 doctype_js = {
     "Quotation":"public/js/quotation.js",
     "Purchase Invoice":"public/js/purchase_invoice.js",
-    "Purchase Order":"public/js/purchase_order.js"
+    "Purchase Order":"public/js/purchase_order.js",
+    "Training Schedule":"public/js/training.js"
 }
 # application home page (will override Website Settings)
 # home_page = "login"
@@ -300,7 +305,8 @@ fixtures = [
         [
             [
                 "name", "in", [
-                    "Quotation"
+                    "Quotation",
+                    "Purchase Order Workflow"
                 ]]  
         ]},
         {
@@ -315,6 +321,31 @@ fixtures = [
                    
                 ]]  
         ]},
+        {
+               "dt": "Role",
+        "filters": [
+            [
+                "name",
+                "in",
+                [
+                   "Operation Manager"
+                ]
+            ]
+        ]
+    },
+    {
+        "dt": "Calendar View",
+        "filters": [
+            [
+                "name",
+                "in",
+                [
+                   "Training Schedule List"
+                ]
+            ]
+        ]
+    },
+
 ]
 
 
