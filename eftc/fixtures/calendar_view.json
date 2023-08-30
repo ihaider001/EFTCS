@@ -1,0 +1,13 @@
+[
+ {
+  "all_day": 1,
+  "docstatus": 0,
+  "doctype": "Calendar View",
+  "end_date_field": "end_time",
+  "modified": "2023-08-29 09:33:24.116316",
+  "name": "Training Schedule List",
+  "reference_doctype": "Training Schedule",
+  "start_date_field": "start_time",
+  "subject_field": "trainer_name"
+ }
+]
