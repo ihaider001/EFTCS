@@ -13,8 +13,16 @@ from frappe.model.document import Document
 
 class Certificate(Document):
 	def after_insert(self):
+		# Creating QR Code url 
+		url = frappe.utils.get_url()+"/api/method/eftc.hook.quotation.qr_code_scanning_with_validation?doctype={doctype}&name={docname}&format={print_format}".format(
+		doctype = "Certificate" ,
+		docname =self.name,
+		print_format = "Certificate"
+		)
+
+
 		# Setting Expiry Date for QR Code 
-		full_data = self.qr_code_url
+		full_data = url
 		qr_image = io.BytesIO()
 		url = qr_create(full_data)
 		url.png(qr_image, scale=2, quiet_zone=1)
@@ -38,4 +46,3 @@ class Certificate(Document):
 
 		# Updating QR image in Certificate
 		self.db_set("qr_image", _file.file_url)
-
