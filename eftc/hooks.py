@@ -278,7 +278,9 @@ fixtures = [
                     "Address-address_line_2_in_arabic",
                     "Address-address_title_in_arabic_",
                     "Address-address_in_arabic",
-                    "Address-phone_in_arabic"
+                    "Address-phone_in_arabic",
+                    "Purchase Order-custom_qr_code_validity_in_days",
+                    "Purchase Invoice-custom_qr_code_validity_in_days"
                 ]]  
         ]},
          {

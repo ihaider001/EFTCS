@@ -2,7 +2,7 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on('Certificate', {
-	refresh: function(frm) {
+	before_save: function(frm) {
 		frappe.call({
             method:"eftc.hook.quotation.set_qr_code_url",
             args:{
