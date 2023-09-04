@@ -101,8 +101,10 @@ def qr_code_scanning_with_validation():
                 
 
         else:
+            frappe.local.response["http_status_code"] = 404
             return "QR Code Not Found"    
 
     except Exception  as e:
+        frappe.local.response["http_status_code"] = 417
         return e
 
