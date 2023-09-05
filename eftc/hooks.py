@@ -347,6 +347,18 @@ fixtures = [
             ]
         ]
     },
+     {
+        "dt": "Workspace",
+        "filters": [
+            [
+                "name",
+                "in",
+                [
+                   "Home"
+                ]
+            ]
+        ]
+    },
 
 ]
 
