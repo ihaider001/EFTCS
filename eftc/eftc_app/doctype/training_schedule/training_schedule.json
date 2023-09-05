@@ -7,6 +7,7 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "iscompleted",
   "clientcustomer_name",
   "sales_order",
   "column_break_b8e80",
@@ -41,12 +42,14 @@
   "training_meeting_link",
   "attendees_section",
   "upload_attendence",
-  "attendees"
+  "attendees",
+  "color"
  ],
  "fields": [
   {
    "fieldname": "clientcustomer_name",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Client/Customer Name",
    "options": "Customer"
   },
@@ -105,6 +108,7 @@
   {
    "fieldname": "course",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Course",
    "options": "Item"
   },
@@ -226,6 +230,18 @@
    "fieldtype": "Link",
    "label": "Sales Order",
    "options": "Sales Order"
+  },
+  {
+   "fieldname": "color",
+   "fieldtype": "Color",
+   "hidden": 1,
+   "label": "Color"
+  },
+  {
+   "default": "0",
+   "fieldname": "iscompleted",
+   "fieldtype": "Check",
+   "label": "IsCompleted"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -237,7 +253,7 @@
    "link_fieldname": "training_schedule"
   }
  ],
- "modified": "2023-08-25 16:30:54.300881",
+ "modified": "2023-09-05 16:30:25.246267",
  "modified_by": "Administrator",
  "module": "EFTC APP",
  "name": "Training Schedule",

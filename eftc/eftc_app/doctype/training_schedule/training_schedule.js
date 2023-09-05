@@ -10,6 +10,10 @@ frappe.ui.form.on('Training Schedule', {
 		})
 	
 	},
+	iscompleted: function(frm) {
+		frm.set_value("color","#29CD42")
+	
+	},
 
 	refresh:function(frm){
 		if (!frm.doc.__islocal){
