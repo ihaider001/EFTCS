@@ -14,10 +14,8 @@ from frappe.model.document import Document
 class Certificate(Document):
 	def after_insert(self):
 		# Creating QR Code url 
-		url = frappe.utils.get_url()+"/api/method/eftc.hook.quotation.qr_code_scanning_with_validation?doctype={doctype}&name={docname}&format={print_format}".format(
-		doctype = "Certificate" ,
+		url = frappe.utils.get_url()+"/api/method/eftc.hook.quotation.qr_code_scanning_with_validation?doctype=Certificate&name={docname}&format=Certificate".format(
 		docname =self.name,
-		print_format = "Certificate"
 		)
 
 
