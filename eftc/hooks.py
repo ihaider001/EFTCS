@@ -38,7 +38,8 @@ app_license = "MIT"
 # ----------
 
 doctype_list_js={
-    "Training Schedule" :"public/js/training_list.js"
+    "Training Schedule" :"public/js/training_list.js",
+    "Certificate" :"public/js/certificate_list.js"
 }
 
 doctype_js = {

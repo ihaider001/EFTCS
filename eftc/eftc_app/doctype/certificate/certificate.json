@@ -10,6 +10,8 @@
   "other__certificate_number",
   "attendee_name",
   "course",
+  "date",
+  "trainer_name",
   "iquama_no",
   "issue_date",
   "upload_photo",
@@ -17,20 +19,21 @@
   "qr_code_url",
   "qr_image",
   "training_schedule",
-  "expiry"
+  "expiry",
+  "created_by"
  ],
  "fields": [
   {
    "fetch_from": "attendee.attendee_name",
    "fieldname": "attendee_name",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Attendee Name"
   },
   {
    "fieldname": "course",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Course",
    "options": "Item",
    "read_only": 1
@@ -38,7 +41,6 @@
   {
    "fieldname": "iquama_no",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "IQUAMA NO"
   },
@@ -90,11 +92,30 @@
    "fieldname": "other__certificate_number",
    "fieldtype": "Data",
    "label": "Other  Certificate Number"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date"
+  },
+  {
+   "fieldname": "trainer_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Trainer Name"
+  },
+  {
+   "fieldname": "created_by",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Created By"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-08-25 16:40:07.590537",
+ "modified": "2023-09-12 08:24:14.754679",
  "modified_by": "Administrator",
  "module": "EFTC APP",
  "name": "Certificate",
