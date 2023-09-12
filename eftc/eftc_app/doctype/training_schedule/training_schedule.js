@@ -51,7 +51,6 @@ frappe.ui.form.on('Training Schedule', {
 					cannot_add_rows: true,
 					// in_place_edit: true,
 					fields: [
-						{ fieldname: 'attendee', fieldtype: 'Read Only', in_list_view: 1, label: 'Attendee',width:2 },
 						{ fieldname: 'attendee_name', fieldtype: 'Read Only', in_list_view: 1, label: 'Attendee_name'},
 						{ fieldname: 'iquama_no', fieldtype: 'Read Only', in_list_view: 1, label: 'IQUAMA NO'},
 					],
