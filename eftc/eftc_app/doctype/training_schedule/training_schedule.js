@@ -16,11 +16,19 @@ frappe.ui.form.on('Training Schedule', {
 	},
 
 	refresh:function(frm){
-		if (!frm.doc.__islocal){
-		frm.add_custom_button(__('Create Sales Invoice'), () =>
-			frm.trigger("create_sales_invoice")
+		if (!frm.doc.__islocal)  {
+				frm.add_custom_button(__('Create Sales Invoice'), () =>
+				frm.trigger("create_sales_invoice")
 		);
+		if ( (frappe.user.has_role("Employee"))  && (!frappe.user.has_role("System Manager"))){
+			frm.remove_custom_button('Create Sales Invoice');
+			// Hiding Connections tab
+			$(".form-links").hide();
+
+
 		}
+	}	
+	  
 	},
 	
 	before_save:function(frm){

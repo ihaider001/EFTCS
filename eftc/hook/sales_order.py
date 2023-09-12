@@ -12,7 +12,8 @@ def on_submit(doc , event):
             "clientcustomer_name":doc.customer,
             "company":get_default_company(),
             "type":"Seminar",
-            "sales_order":doc.name        })
+            "sales_order":doc.name ,
+            "created_by":frappe.session.user       })
         training_event.insert(ignore_permissions=True,
                               ignore_mandatory=True)
         url = "<a href='{0}/app/training-schedule/{1}'>{1}</a>".format(frappe.utils.get_url(),training_event.name)

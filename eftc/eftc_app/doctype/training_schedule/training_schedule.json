@@ -14,8 +14,9 @@
   "type",
   "company",
   "section_break_pg10a",
-  "trainer_name",
+  "trainer",
   "trainer_email",
+  "trainer_name",
   "column_break_9rq51",
   "attendance_sheet_number",
   "contact_number",
@@ -43,7 +44,9 @@
   "attendees_section",
   "upload_attendence",
   "attendees",
-  "color"
+  "color",
+  "created_by",
+  "date"
  ],
  "fields": [
   {
@@ -75,13 +78,12 @@
    "fieldtype": "Section Break"
   },
   {
+   "fetch_from": "trainer.employee_name",
    "fieldname": "trainer_name",
-   "fieldtype": "Link",
-   "label": "Trainer Name",
-   "options": "Employee"
+   "fieldtype": "Data",
+   "label": "Trainer Name"
   },
   {
-   "fetch_from": "trainer_name.prefered_email",
    "fieldname": "trainer_email",
    "fieldtype": "Data",
    "label": "Trainer Email"
@@ -242,6 +244,25 @@
    "fieldname": "iscompleted",
    "fieldtype": "Check",
    "label": "IsCompleted"
+  },
+  {
+   "fieldname": "trainer",
+   "fieldtype": "Link",
+   "label": "Trainer ",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "created_by",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "in_list_view": 1,
+   "label": "Created By"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -253,7 +274,7 @@
    "link_fieldname": "training_schedule"
   }
  ],
- "modified": "2023-09-05 16:30:25.246267",
+ "modified": "2023-09-12 08:54:45.512634",
  "modified_by": "Administrator",
  "module": "EFTC APP",
  "name": "Training Schedule",
