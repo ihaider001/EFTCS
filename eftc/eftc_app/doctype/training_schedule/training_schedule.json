@@ -127,14 +127,14 @@
   },
   {
    "fieldname": "start_time",
-   "fieldtype": "Datetime",
-   "label": "Start Time",
+   "fieldtype": "Date",
+   "label": "Start Date",
    "reqd": 1
   },
   {
    "fieldname": "end_time",
-   "fieldtype": "Datetime",
-   "label": "End Time",
+   "fieldtype": "Date",
+   "label": "End  Date ",
    "reqd": 1
   },
   {
@@ -159,7 +159,7 @@
    "fieldname": "training_mode",
    "fieldtype": "Select",
    "label": "Training Mode ",
-   "options": "Online\nOfflne"
+   "options": "Online\nOffine\nClient Site\nClient Office\nHotel\nOthers"
   },
   {
    "fieldname": "column_break_vwunb",
@@ -274,7 +274,7 @@
    "link_fieldname": "training_schedule"
   }
  ],
- "modified": "2023-09-12 08:54:45.512634",
+ "modified": "2023-09-14 13:48:54.241922",
  "modified_by": "Administrator",
  "module": "EFTC APP",
  "name": "Training Schedule",

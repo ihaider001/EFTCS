@@ -38,7 +38,10 @@ frappe.ui.form.on('Training Schedule', {
 		let attendee_data = []
 		for ( var attendee in frm.doc.attendees){
 			if (!frm.doc.attendees[attendee]["sales_invoice"]){
-				attendee_data.push(frm.doc.attendees[attendee])
+				var dict = { "attendee_name":frm.doc.attendees[attendee]["attendee_name"],
+							"iquama_no":frm.doc.attendees[attendee]["iqamaid_no"]
+				  }
+				attendee_data.push(dict)
 			}
 		}
 
