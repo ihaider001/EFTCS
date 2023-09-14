@@ -46,7 +46,8 @@ doctype_js = {
     "Quotation":"public/js/quotation.js",
     "Purchase Invoice":"public/js/purchase_invoice.js",
     "Purchase Order":"public/js/purchase_order.js",
-    "Training Schedule":"public/js/training.js"
+    "Training Schedule":"public/js/training.js",
+    "Sales Invoice":"public/js/sales_invoice.js"
 }
 # application home page (will override Website Settings)
 # home_page = "login"
@@ -178,9 +179,9 @@ doc_events = {
 # Overriding Methods
 # ------------------------------
 #
-# override_whitelisted_methods = {
-#	"frappe.desk.doctype.event.event.get_events": "eftc.event.get_events"
-# }
+override_whitelisted_methods = {
+	"erpnext.selling.doctype.quotation.quotation.make_sales_order": "eftc.overrides.quotation.make_sales_order"
+}
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
@@ -281,7 +282,14 @@ fixtures = [
                     "Address-address_in_arabic",
                     "Address-phone_in_arabic",
                     "Purchase Order-custom_qr_code_validity_in_days",
-                    "Purchase Invoice-custom_qr_code_validity_in_days"
+                    "Purchase Invoice-custom_qr_code_validity_in_days",
+                    "Sales Order-custom_cr_number",
+                    "Sales Order-custom_vat_number",
+                    "Sales Order-custom_from_date_",
+                    "Sales Invoice-custom_cr_number",
+                    "Sales Invoice-custom_vat_number_",
+                    "Sales Order-custom_training_mode_",
+                    "Sales Order-custom_training_mode_"
                 ]]  
         ]},
          {
@@ -320,7 +328,9 @@ fixtures = [
                    "Sales Invoice-main-links_order",
                    "Sales Order-main-links_order",
                    "Address-address_line2-label",
-                   "Address-address_line1-label"
+                   "Address-address_line1-label",
+                   "Address-county-hidden",
+                   "Sales Order-delivery_date-label"
                    
                 ]]  
         ]},

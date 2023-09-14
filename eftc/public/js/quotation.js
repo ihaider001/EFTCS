@@ -10,4 +10,12 @@ frappe.ui.form.on("Quotation", {
             },
         })
    },
+   customer_address : function (frm) {
+    if (cur_frm.doc.customer_address){
+     frappe.db.get_doc("Address",cur_frm.doc.customer_address).then(r=>{
+      cur_frm.set_value("cr_number",r.cr_no)
+      cur_frm.set_value("vat_number",r.vat_number_)
+     })
+      }
+ },
 })
