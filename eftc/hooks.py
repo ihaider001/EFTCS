@@ -265,7 +265,6 @@ fixtures = [
                     "Quotation Item-awarding_body",
                     "Quotation-customer_name_in_arabic",
                     "Item-item_name_in_arabic",
-                    "Quotation-custom_sales_representative",
                     "Quotation-sales_representative_mobile_number",
                     "Quotation-training_mode",
                     "Quotation-location",
@@ -291,7 +290,8 @@ fixtures = [
                     "Sales Order-custom_training_mode_",
                     "Sales Order-custom_training_mode_",
                     "Sales Invoice Item-custom_item_name_in_arabic",
-                    "Item-custom_duration"
+                    "Item-custom_duration",
+                    "Quotation-custom_sales_representative"
                 ]]  
         ]},
          {
@@ -341,7 +341,8 @@ fixtures = [
                    "Sales Order-incoterm-hidden",
                    "Sales Invoice-total_qty-hidden",
                    "Sales Invoice-shipping_rule-hidden",
-                   "Sales Invoice-incoterm-hidden"
+                   "Sales Invoice-incoterm-hidden",
+                   "Sales Person-sales_person_name-fetch_from"
                    
                 ]]  
         ]},
