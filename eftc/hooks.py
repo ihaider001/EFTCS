@@ -265,7 +265,7 @@ fixtures = [
                     "Quotation Item-awarding_body",
                     "Quotation-customer_name_in_arabic",
                     "Item-item_name_in_arabic",
-                    "Quotation-sales_representative",
+                    "Quotation-custom_sales_representative",
                     "Quotation-sales_representative_mobile_number",
                     "Quotation-training_mode",
                     "Quotation-location",
@@ -289,7 +289,9 @@ fixtures = [
                     "Sales Invoice-custom_cr_number",
                     "Sales Invoice-custom_vat_number_",
                     "Sales Order-custom_training_mode_",
-                    "Sales Order-custom_training_mode_"
+                    "Sales Order-custom_training_mode_",
+                    "Sales Invoice Item-custom_item_name_in_arabic",
+                    "Item-custom_duration"
                 ]]  
         ]},
          {
@@ -330,7 +332,16 @@ fixtures = [
                    "Address-address_line2-label",
                    "Address-address_line1-label",
                    "Address-county-hidden",
-                   "Sales Order-delivery_date-label"
+                   "Sales Order-delivery_date-label",
+                   "Quotation-total_qty-hidden",
+                   "Quotation-shipping_rule-hidden",
+                   "Quotation-incoterm-hidden",
+                   "Sales Order-total_qty-hidden",
+                   "Sales Order-shipping_rule-hidden",
+                   "Sales Order-incoterm-hidden",
+                   "Sales Invoice-total_qty-hidden",
+                   "Sales Invoice-shipping_rule-hidden",
+                   "Sales Invoice-incoterm-hidden"
                    
                 ]]  
         ]},
