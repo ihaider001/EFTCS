@@ -159,7 +159,7 @@
    "fieldname": "training_mode",
    "fieldtype": "Select",
    "label": "Training Mode ",
-   "options": "Online\nOffine\nClient Site\nClient Office\nHotel\nOthers"
+   "options": "Online\nOffine\nClient Side\nClient Office\nHotel\nOthers"
   },
   {
    "fieldname": "column_break_vwunb",
@@ -274,7 +274,7 @@
    "link_fieldname": "training_schedule"
   }
  ],
- "modified": "2023-09-14 13:48:54.241922",
+ "modified": "2023-09-15 17:02:28.583641",
  "modified_by": "Administrator",
  "module": "EFTC APP",
  "name": "Training Schedule",
