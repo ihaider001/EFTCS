@@ -39,7 +39,10 @@ frappe.ui.form.on('Training Schedule', {
 		for ( var attendee in frm.doc.attendees){
 			if (!frm.doc.attendees[attendee]["sales_invoice"]){
 				var dict = { "attendee_name":frm.doc.attendees[attendee]["attendee_name"],
-							"iquama_no":frm.doc.attendees[attendee]["iqamaid_no"]
+							"iqamaid_no":frm.doc.attendees[attendee]["iqamaid_no"],
+							"course":frm.doc.attendees[attendee]["course"],
+							"issue_date":frm.doc.attendees[attendee]["issue_date"],
+							// "validity":frm.doc.attendee[attendee]["validity"]
 				  }
 				attendee_data.push(dict)
 			}
@@ -55,7 +58,7 @@ frappe.ui.form.on('Training Schedule', {
 					// in_place_edit: true,
 					fields: [
 						{ fieldname: 'attendee_name', fieldtype: 'Read Only', in_list_view: 1, label: 'Attendee_name'},
-						{ fieldname: 'iquama_no', fieldtype: 'Read Only', in_list_view: 1, label: 'IQUAMA NO'},
+						{ fieldname: 'iqamaid_no', fieldtype: 'Read Only', in_list_view: 1, label: 'IQUAMA NO'},
 					],
 					data:attendee_data
 				}

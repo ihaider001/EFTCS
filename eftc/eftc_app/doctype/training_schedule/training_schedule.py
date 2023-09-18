@@ -19,6 +19,7 @@ class TrainingSchedule(Document):
             days = year*365
 
             expiry_date = frappe.utils.add_days(attendee.get("issue_date"),days),
+            attendee.expiry_date = expiry_date
             certificate =frappe.get_doc({
                 "doctype":"Certificate",
                 "attendee_name":attendee.get("attendee_name"),
@@ -32,6 +33,7 @@ class TrainingSchedule(Document):
                 "trainer_name":self.trainer_name,
                 "created_by": frappe.session.user
             }).insert(ignore_permissions = True)
+            self.save(ignore_permissions = True)
             url = "<a href='{0}/app/certificate/{1}'>{2}</a>".format(frappe.utils.get_url(),certificate.name,certificate.attendee_name)
             frappe.msgprint(
                 _("Certificate Created for {0}".format(frappe.bold(url))),
@@ -74,10 +76,11 @@ def create_sales_invoice(values,docname):
         })
     for attendee in json_data["undefined"]:
         sales_invoice.append("attendee",{
-            "attendee":attendee.get("attendee"),
+            "attendee_name":attendee.get("attendee_name"),
             "course":attendee.get("course"),
             "issue_date":attendee.get("issue_date"),
-            "validity":attendee.get("validity")
+            "validity":attendee.get("validity"),
+            "iqamaid_no":attendee.get("iqamaid_no")
         })
     sales_invoice.save(ignore_permissions=1)
     url = "<a href='{0}/app/sales-invoice/{1}'>{1}</a>".format(frappe.utils.get_url(),sales_invoice.name)
