@@ -31,14 +31,6 @@
    "label": "Attendee Name"
   },
   {
-   "fieldname": "course",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Course",
-   "options": "Item",
-   "read_only": 1
-  },
-  {
    "fieldname": "iquama_no",
    "fieldtype": "Data",
    "in_standard_filter": 1,
@@ -111,11 +103,16 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Created By"
+  },
+  {
+   "fieldname": "course",
+   "fieldtype": "Data",
+   "label": "Course"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-12 08:24:14.754679",
+ "modified": "2023-09-18 14:34:07.932652",
  "modified_by": "Administrator",
  "module": "EFTC APP",
  "name": "Certificate",

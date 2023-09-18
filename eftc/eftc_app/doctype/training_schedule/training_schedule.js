@@ -82,8 +82,9 @@ frappe.ui.form.on('Training Schedule', {
 
 frappe.ui.form.on('Attendees Table', {
 	attendee_name:function(frm,cdt,cdn){
-		frappe.model.set_value(cdt, cdn, 'course', cur_frm.doc.course)
-		cur_frm.refresh_fields("course");
+		frappe.db.get_doc("Item",cur_frm.doc.course).then(r=>{
+		frappe.model.set_value(cdt, cdn, 'course', r.item_name)
+		})
 	}
 });
 
