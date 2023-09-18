@@ -291,7 +291,8 @@ fixtures = [
                     "Sales Order-custom_training_mode_",
                     "Sales Invoice Item-custom_item_name_in_arabic",
                     "Item-custom_duration",
-                    "Quotation-custom_sales_representative"
+                    "Quotation-custom_sales_representative",
+                    "Sales Order-custom_location"
                 ]]  
         ]},
          {
