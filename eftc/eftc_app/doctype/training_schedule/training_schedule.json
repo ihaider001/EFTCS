@@ -32,7 +32,6 @@
   "column_break_vwunb",
   "travel_to",
   "column_break_w2hcm",
-  "training_location",
   "column_break_yl1g3",
   "total_participants",
   "section_break_3nqu1",
@@ -118,7 +117,7 @@
    "fieldname": "location",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Location",
+   "label": " Training Location",
    "reqd": 1
   },
   {
@@ -173,11 +172,6 @@
   {
    "fieldname": "column_break_w2hcm",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "training_location",
-   "fieldtype": "Data",
-   "label": "Training Location"
   },
   {
    "fieldname": "training_location_google_link",
@@ -272,9 +266,17 @@
   {
    "link_doctype": "Certificate",
    "link_fieldname": "training_schedule"
+  },
+  {
+   "link_doctype": "Sales Invoice",
+   "link_fieldname": "training_schedule"
+  },
+  {
+   "link_doctype": "Training Schedule Feedback",
+   "link_fieldname": "training_schedule"
   }
  ],
- "modified": "2023-09-15 17:02:28.583641",
+ "modified": "2023-09-19 14:12:27.699925",
  "modified_by": "Administrator",
  "module": "EFTC APP",
  "name": "Training Schedule",
