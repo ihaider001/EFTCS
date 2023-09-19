@@ -47,7 +47,8 @@ doctype_js = {
     "Purchase Invoice":"public/js/purchase_invoice.js",
     "Purchase Order":"public/js/purchase_order.js",
     "Training Schedule":"public/js/training.js",
-    "Sales Invoice":"public/js/sales_invoice.js"
+    "Sales Invoice":"public/js/sales_invoice.js",
+     "Sales Order":"public/js/sales_order.js"
 }
 # application home page (will override Website Settings)
 # home_page = "login"

@@ -13,6 +13,11 @@ import json
 
 class TrainingSchedule(Document):
     def on_submit(self):
+
+        # Creating Training Schedule Feedback
+        create_training_schedule_feedback(self)
+
+
         # Creating Certificate for every attendee on submit of Training schedule
         for attendee in self.attendees:
             year = int(attendee.get("validity"))
@@ -99,18 +104,12 @@ def create_sales_invoice(values,docname):
 
     
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+def create_training_schedule_feedback(self):
+    frappe.get_doc({
+        "doctype":"Training Schedule Feedback",
+        "employee":self.get("trainer"),
+        "course":self.get("course"),
+        "training_schedule":self.get("name")
+        }).insert(ignore_permissions = True , ignore_mandatory = True)
 
 
