@@ -29,13 +29,13 @@ class TrainingSchedule(Document):
                 "doctype":"Certificate",
                 "attendee_name":attendee.get("attendee_name"),
                 "course":attendee.get("course"),
-                "iquama_no":attendee.get("iquama_no"),
+                "iquama_no":attendee.get("iqamaid_no"),
                 "issue_date":attendee.get("issue_date"),
                 "upload_photo":attendee.get("upload_photo"),
                 "sales_invoice":attendee.get("sales_invoice"),
-                "training_schedule":self.name,
+                "training_schedule":self.get("name"),
                 "expiry":expiry_date,
-                "trainer_name":self.trainer_name,
+                "trainer_name":self.get("trainer_name"),
                 "created_by": frappe.session.user
             }).insert(ignore_permissions = True)
             self.save(ignore_permissions = True)
