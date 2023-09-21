@@ -293,7 +293,15 @@ fixtures = [
                     "Sales Invoice Item-custom_item_name_in_arabic",
                     "Item-custom_duration",
                     "Quotation-custom_sales_representative",
-                    "Sales Order-custom_location"
+                    "Sales Order-custom_location",
+                    "Address-custom_district_in_arabic",
+                    "Address-custom_district",
+                    "Address-custom_addl_no_in_arabic",
+                    "Address-custom_addl_no",
+                    "Sales Invoice-custom_location",
+                    "Sales Invoice-custom_customer_type",
+                    "Sales Invoice-custom_project_reference",
+                    "Sales Invoice-custom_contact__po_no"
                 ]]  
         ]},
          {
