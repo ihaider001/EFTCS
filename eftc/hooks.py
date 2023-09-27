@@ -301,7 +301,15 @@ fixtures = [
                     "Sales Invoice-custom_location",
                     "Sales Invoice-custom_customer_type",
                     "Sales Invoice-custom_project_reference",
-                    "Sales Invoice-custom_contact__po_no"
+                    "Sales Invoice-custom_contact__po_no",
+                    "Sales Invoice-custom_contractpo_no",
+                    "Sales Invoice-custom__project_reference_no",
+                    "Sales Invoice-custom_customer_type_eng",
+                    "Sales Invoice-custom_supply_date",
+                    "Bank Account-custom_account_name_arabic",
+                    "Bank Account-custom_bank_arabic",
+                    "Bank Account-custom_bank_account_arabic",
+                    "Bank Account-custom_swift_code"
                 ]]  
         ]},
          {
