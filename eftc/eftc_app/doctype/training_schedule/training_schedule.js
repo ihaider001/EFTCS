@@ -16,7 +16,7 @@ frappe.ui.form.on('Training Schedule', {
 	},
 
 	refresh:function(frm){
-		if (!frm.doc.__islocal)  {
+		if (!frm.doc.__islocal && !frm.doc.isbillled)  {
 				frm.add_custom_button(__('Create Sales Invoice'), () =>
 				frm.trigger("create_sales_invoice")
 		);
