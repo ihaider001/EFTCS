@@ -1,4 +1,5 @@
 import frappe
+from frappe.model.naming import make_autoname
 
 def on_submit(doc,method):
     for attendee in doc.attendee:
@@ -12,3 +13,8 @@ def on_submit(doc,method):
     if len(training_event.get("attendees")) == counter:
         training_event.isbillled = 1
         training_event.save()
+    
+
+
+def autoname(doc,event):
+    doc.so_naming_series= make_autoname(f"SO.-.####.")
