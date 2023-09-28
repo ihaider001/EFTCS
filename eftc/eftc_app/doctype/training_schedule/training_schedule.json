@@ -24,6 +24,7 @@
   "section_break_fpmav",
   "course",
   "course_name",
+  "course_amount",
   "location",
   "column_break_ax0v0",
   "start_time",
@@ -275,6 +276,12 @@
    "fieldtype": "Check",
    "label": "IsBillled",
    "read_only": 1
+  },
+  {
+   "fieldname": "course_amount",
+   "fieldtype": "Float",
+   "hidden": 1,
+   "label": "Course Amount"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -294,7 +301,7 @@
    "link_fieldname": "training_schedule"
   }
  ],
- "modified": "2023-09-27 09:56:00.564001",
+ "modified": "2023-09-28 13:34:08.251758",
  "modified_by": "Administrator",
  "module": "EFTC APP",
  "name": "Training Schedule",

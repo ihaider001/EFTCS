@@ -73,12 +73,11 @@ def create_sales_invoice(values,docname):
     sales_invoice = frappe.new_doc("Sales Invoice")
     sales_invoice.customer = sales_order_details.customer
     sales_invoice.training_schedule = docname
-    for item in sales_order_details.items:
-        sales_invoice.append("items",{
-            "item_code":item.get("item_code"),
-            "qty":item.get("qty"),
-            "amount":item.get("amount")
-        })
+    sales_invoice.append("items",{
+        "item_code":training_schedule.course,
+        "qty":len(json_data["undefined"]),
+        "amount":len(json_data["undefined"]) * training_schedule.course_amount
+    })
     for attendee in json_data["undefined"]:
         sales_invoice.append("attendee",{
             "attendee_name":attendee.get("attendee_name"),
