@@ -148,6 +148,9 @@ doc_events = {
     },
     "Purchase Order":{
         "on_submit":"eftc.hook.purchase_order.generate_qr_code"
+    },
+    "Sales Invoice": {
+        "on_submit":"eftc.hook.sales_invoice.on_submit"
     }
 }
 
@@ -309,7 +312,8 @@ fixtures = [
                     "Bank Account-custom_account_name_arabic",
                     "Bank Account-custom_bank_arabic",
                     "Bank Account-custom_bank_account_arabic",
-                    "Bank Account-custom_swift_code"
+                    "Bank Account-custom_swift_code",
+                    "Training Schedule-custom_isbilled"
                 ]]  
         ]},
          {

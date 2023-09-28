@@ -8,6 +8,7 @@
  "engine": "InnoDB",
  "field_order": [
   "iscompleted",
+  "isbillled",
   "clientcustomer_name",
   "sales_order",
   "column_break_b8e80",
@@ -266,6 +267,14 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Course Name "
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "isbillled",
+   "fieldtype": "Check",
+   "label": "IsBillled",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
@@ -285,7 +294,7 @@
    "link_fieldname": "training_schedule"
   }
  ],
- "modified": "2023-09-20 12:17:05.676331",
+ "modified": "2023-09-27 09:56:00.564001",
  "modified_by": "Administrator",
  "module": "EFTC APP",
  "name": "Training Schedule",
