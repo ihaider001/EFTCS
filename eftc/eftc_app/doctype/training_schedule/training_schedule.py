@@ -94,13 +94,12 @@ def create_sales_invoice(values,docname):
         alert=1,
         )
 
-
     # Updating Training Schedule child table 
-    for attendees in training_schedule.attendees:
-        if  attendees.get("name") in list(map(lambda x : x["name"],json_data["undefined"])):
-            attendees.sales_invoice=sales_invoice.name
-    training_schedule.save()        
-
+    for attendees in sales_invoice.attendee:
+        for trainees in training_schedule.attendees:
+            if attendees.iqamaid_no == trainees.iqamaid_no:
+                trainees.sales_invoice = sales_invoice.name
+    training_schedule.save()
     
 
 def create_training_schedule_feedback(self):
