@@ -150,9 +150,8 @@ doc_events = {
         "on_submit":"eftc.hook.purchase_order.generate_qr_code"
     },
     "Sales Invoice": {
-        "on_submit":"eftc.hook.sales_invoice.on_submit",
-        "on_submit":"eftc.hook.sales_invoice.autoname"
-
+        "on_submit":"eftc.hook.sales_invoice.autoname",
+        "on_trash": "eftc.hook.sales_invoice.on_submit"
     }
 }
 

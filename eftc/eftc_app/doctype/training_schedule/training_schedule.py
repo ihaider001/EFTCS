@@ -73,12 +73,11 @@ def create_sales_invoice(values,docname):
     sales_invoice = frappe.new_doc("Sales Invoice")
     sales_invoice.customer = sales_order_details.customer
     sales_invoice.training_schedule = docname
-    for item in sales_order_details.items:
-        sales_invoice.append("items",{
-            "item_code":item.get("item_code"),
-            "qty":item.get("qty"),
-            "amount":item.get("amount")
-        })
+    sales_invoice.append("items",{
+        "item_code":training_schedule.course,
+        "qty":len(json_data["undefined"]),
+        "amount":len(json_data["undefined"]) * training_schedule.course_amount
+    })
     for attendee in json_data["undefined"]:
         sales_invoice.append("attendee",{
             "attendee_name":attendee.get("attendee_name"),
@@ -95,13 +94,12 @@ def create_sales_invoice(values,docname):
         alert=1,
         )
 
-
     # Updating Training Schedule child table 
-    for attendees in training_schedule.attendees:
-        if  attendees.get("name") in list(map(lambda x : x["name"],json_data["undefined"])):
-            attendees.sales_invoice=sales_invoice.name
-    training_schedule.save()        
-
+    for attendees in sales_invoice.attendee:
+        for trainees in training_schedule.attendees:
+            if attendees.iqamaid_no == trainees.iqamaid_no:
+                trainees.sales_invoice = sales_invoice.name
+    training_schedule.save()
     
 
 def create_training_schedule_feedback(self):

@@ -12,6 +12,7 @@ def on_submit(doc , event):
             "clientcustomer_name":doc.customer,
             "company":get_default_company(),
             "type":"Seminar",
+            "course_amount":item.get("amount"),
             "sales_order":doc.name ,
             "created_by":frappe.session.user ,
             "start_time":doc.custom_from_date_,
