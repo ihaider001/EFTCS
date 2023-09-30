@@ -1,0 +1,137 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:reference_id",
+ "creation": "2023-09-30 13:46:53.877590",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "reference_id",
+  "training_number",
+  "iqama_no",
+  "date",
+  "attendance_sheet_number",
+  "trainer",
+  "client",
+  "print_name",
+  "card_no",
+  "course",
+  "level",
+  "name1",
+  "issue_date",
+  "expiry_date",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "training_number",
+   "fieldtype": "Data",
+   "label": "Training Number"
+  },
+  {
+   "fieldname": "attendance_sheet_number",
+   "fieldtype": "Data",
+   "label": "Attendance Sheet Number"
+  },
+  {
+   "fieldname": "trainer",
+   "fieldtype": "Data",
+   "label": "Trainer"
+  },
+  {
+   "fieldname": "client",
+   "fieldtype": "Data",
+   "label": "Client"
+  },
+  {
+   "fieldname": "print_name",
+   "fieldtype": "Data",
+   "label": "Print Name"
+  },
+  {
+   "fieldname": "card_no",
+   "fieldtype": "Data",
+   "label": "Card No"
+  },
+  {
+   "fieldname": "course",
+   "fieldtype": "Data",
+   "label": "Course"
+  },
+  {
+   "fieldname": "level",
+   "fieldtype": "Data",
+   "label": "Level"
+  },
+  {
+   "fieldname": "name1",
+   "fieldtype": "Data",
+   "label": "Name"
+  },
+  {
+   "fieldname": "iqama_no",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Iqama No"
+  },
+  {
+   "fieldname": "issue_date",
+   "fieldtype": "Date",
+   "label": "Issue Date"
+  },
+  {
+   "fieldname": "expiry_date",
+   "fieldtype": "Date",
+   "label": "Expiry Date"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Old Certificate",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "reference_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Reference ID",
+   "reqd": 1,
+   "unique": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-09-30 14:43:43.893531",
+ "modified_by": "Administrator",
+ "module": "EFTC APP",
+ "name": "Old Certificate",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

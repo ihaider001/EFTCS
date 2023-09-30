@@ -407,7 +407,7 @@
   "insert_after": "address_line2",
   "is_system_generated": 1,
   "is_virtual": 0,
-  "label": "Building Number  in Arabic",
+  "label": "Building Number in Arabic",
   "length": 0,
   "mandatory_depends_on": null,
   "modified": "2023-08-17 13:37:39.138121",
