@@ -7,12 +7,12 @@ def on_submit(doc,method):
         frappe.db.set_value("Attendees Table", attendee_name,"sales_invoice", "")
     training_event = frappe.get_doc("Training Schedule",doc.training_schedule)
     counter = 0
-    for attendee in training_event.get("attendees"):
-        if attendee.sales_invoice:
-            counter+=1
-    if len(training_event.get("attendees")) == counter:
-        training_event.isbillled = 1
-        training_event.save()    
+    # for attendee in training_event.get("attendees"):
+    #     if attendee.sales_invoice:
+    #         counter+=1
+    # if len(training_event.get("attendees")) == counter:
+    #     training_event.isbillled = 1
+    #     training_event.save()
     frappe.db.commit()
 
 

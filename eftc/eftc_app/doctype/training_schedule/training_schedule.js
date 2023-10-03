@@ -8,15 +8,15 @@ frappe.ui.form.on('Training Schedule', {
 				query:"eftc.eftc_app.doctype.training_schedule.training_schedule.attendee_dropdown",
 			}
 		})
-	
+
 	},
 	iscompleted: function(frm) {
 		frm.set_value("color","#29CD42")
-	
+
 	},
 
 	refresh:function(frm){
-		if (!frm.doc.__islocal && !frm.doc.isbillled)  {
+		if (!frm.doc.__islocal)  {
 				frm.add_custom_button(__('Create Sales Invoice'), () =>
 				frm.trigger("create_sales_invoice")
 		);
@@ -27,10 +27,10 @@ frappe.ui.form.on('Training Schedule', {
 
 
 		}
-	}	
-	  
+	}
+
 	},
-	
+
 	before_save:function(frm){
 		frm.set_value("total_participants" , frm.doc.attendees.length)
 	},
@@ -69,15 +69,15 @@ frappe.ui.form.on('Training Schedule', {
 					method:'eftc.eftc_app.doctype.training_schedule.training_schedule.create_sales_invoice',
 					args:{'values':values,
 						"docname":frm.doc.name}
-					
+
 				})
 				dialog.hide();
 				}
 		});
-		dialog.show();	
+		dialog.show();
 	}
 
-	
+
 });
 
 frappe.ui.form.on('Attendees Table', {
@@ -87,4 +87,3 @@ frappe.ui.form.on('Attendees Table', {
 		})
 	}
 });
-
