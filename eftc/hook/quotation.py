@@ -1,3 +1,5 @@
+import json
+
 import frappe
 import io
 import os
@@ -108,3 +110,11 @@ def qr_code_scanning_with_validation():
         frappe.local.response["http_status_code"] = 417
         return e
 
+@frappe.whitelist()
+def get_mobile(custom_sales_representative):
+    sales_person = frappe.db.get_value("Sales Person", custom_sales_representative, "employee")
+    mobile = frappe.db.get_value("Employee", sales_person, "cell_number")
+    if mobile:
+        return mobile
+    else:
+        return False

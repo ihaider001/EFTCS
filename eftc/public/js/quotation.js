@@ -18,4 +18,21 @@ frappe.ui.form.on("Quotation", {
      })
       }
  },
+ custom_sales_representative:function(frm) {
+    frappe.call({
+        method:"eftc.hook.quotation.get_mobile",
+        args:{
+            custom_sales_representative: frm.doc.custom_sales_representative
+        },
+        callback:function(r) {
+            if (r.message) {
+                frm.set_value("sales_representative_mobile_number",r.message)
+                frm.refresh_field("sales_representative_mobile_number")
+            }
+            else {
+                frappe.msgprint("Mobile Number Not found against the Sales Representative "+frm.doc.custom_sales_representative)
+            }
+        }
+    });
+ }
 })
