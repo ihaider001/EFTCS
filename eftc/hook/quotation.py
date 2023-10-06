@@ -118,3 +118,11 @@ def get_mobile(custom_sales_representative):
         return mobile
     else:
         return False
+
+
+
+def validate(doc,method):
+    if doc.total_qty == 0:
+        frappe.throw("Total QTY Cannot be zero! ")
+    if doc.total == 0:
+        frappe.throw("Item Total Cannot be zero! ")
