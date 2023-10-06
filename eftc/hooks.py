@@ -141,6 +141,7 @@ doc_events = {
         "on_submit":"eftc.hook.sales_order.on_submit"
     },
     "Quotation":{
+        "validate": "eftc.hook.quotation.validate",
         "on_submit":"eftc.hook.quotation.generate_qr_code"
     },
     "Purchase Invoice":{
@@ -366,7 +367,12 @@ fixtures = [
                    "Sales Invoice-total_qty-hidden",
                    "Sales Invoice-shipping_rule-hidden",
                    "Sales Invoice-incoterm-hidden",
-                   "Sales Person-sales_person_name-fetch_from"
+                   "Sales Person-sales_person_name-fetch_from",
+                   "Quotation-tc_name-reqd",
+                   "Quotation-payment_terms_template-reqd",
+                   "Sales Order-delivery_date-reqd",
+                   "Sales Invoice-customer_address-reqd",
+                   "Sales Invoice-company_address-reqd"
                    
                 ]]  
         ]},

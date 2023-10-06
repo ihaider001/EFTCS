@@ -1,12 +1,14 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "naming_series:",
  "creation": "2023-08-21 21:00:47.925983",
  "default_view": "List",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "naming_series",
   "other__certificate_number",
   "attendee_name",
   "course",
@@ -108,14 +110,21 @@
    "fieldname": "course",
    "fieldtype": "Data",
    "label": "Course"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "EFTC-"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-09-18 14:34:07.932652",
+ "modified": "2023-10-06 14:30:32.796368",
  "modified_by": "Administrator",
  "module": "EFTC APP",
  "name": "Certificate",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {
