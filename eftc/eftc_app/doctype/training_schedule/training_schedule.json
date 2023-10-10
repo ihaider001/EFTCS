@@ -85,6 +85,7 @@
    "label": "Trainer Name"
   },
   {
+   "fetch_from": "trainer.user_id",
    "fieldname": "trainer_email",
    "fieldtype": "Data",
    "label": "Trainer Email"
@@ -99,7 +100,7 @@
    "label": "Attendance Sheet Number"
   },
   {
-   "fetch_from": "trainer_name.cell_number",
+   "fetch_from": "trainer.cell_number",
    "fieldname": "contact_number",
    "fieldtype": "Data",
    "label": "Contact Number"
@@ -292,7 +293,7 @@
    "link_fieldname": "training_schedule"
   }
  ],
- "modified": "2023-10-03 14:13:47.657535",
+ "modified": "2023-10-10 14:20:40.163307",
  "modified_by": "Administrator",
  "module": "EFTC APP",
  "name": "Training Schedule",
