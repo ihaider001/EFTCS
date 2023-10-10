@@ -24,7 +24,7 @@ class TrainingSchedule(Document):
             days = year*365
 
             expiry_date = frappe.utils.add_days(attendee.get("issue_date"),days),
-            attendee.expiry_date = expiry_date
+            attendee.expiry_date = expiry_date[0]
             certificate =frappe.get_doc({
                 "doctype":"Certificate",
                 "attendee_name":attendee.get("attendee_name"),
@@ -73,6 +73,8 @@ def create_sales_invoice(values,docname):
     sales_invoice = frappe.new_doc("Sales Invoice")
     sales_invoice.customer = sales_order_details.customer
     sales_invoice.training_schedule = docname
+    sales_invoice.custom_cr_number = sales_order_details.custom_cr_number
+    sales_invoice.custom_vat_number_ = sales_order_details.custom_vat_number
     sales_invoice.append("items",{
         "item_code":training_schedule.course,
         "qty":len(json_data["undefined"]),

@@ -768,7 +768,7 @@
   "docstatus": 0,
   "doctype": "Custom Field",
   "dt": "Quotation",
-  "fetch_from": "party_name.customer_name_in_arabic",
+  "fetch_from": null,
   "fetch_if_empty": 0,
   "fieldname": "customer_name_in_arabic",
   "fieldtype": "Data",
