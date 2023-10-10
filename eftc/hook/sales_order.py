@@ -28,5 +28,7 @@ def on_submit(doc , event):
             alert=1,
             )
 
-
-
+def validate(doc,method):
+    for item in doc.items:
+        if item.rate == 0:
+            frappe.throw("Item rate Cannot be zero! for item " + item.item_code + " for row "+str(item.idx))
