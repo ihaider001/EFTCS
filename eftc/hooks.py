@@ -138,6 +138,7 @@ doc_events = {
 	# 	"on_trash": "method"
 	# }
     "Sales Order":{
+        "validate": "eftc.hook.sales_order.validate",
         "on_submit":"eftc.hook.sales_order.on_submit"
     },
     "Quotation":{
@@ -151,7 +152,8 @@ doc_events = {
         "on_submit":"eftc.hook.purchase_order.generate_qr_code"
     },
     "Sales Invoice": {
-        "on_submit":"eftc.hook.sales_invoice.autoname",
+        "on_submit":["eftc.hook.sales_invoice.autoname",
+                    "eftc.hook.sales_invoice.convert_number"],
         "on_trash": "eftc.hook.sales_invoice.on_submit"
     }
 }
@@ -316,7 +318,8 @@ fixtures = [
                     "Bank Account-custom_bank_account_arabic",
                     "Bank Account-custom_swift_code",
                     "Training Schedule-custom_isbilled",
-                    "Sales Invoice-so_naming_series"
+                    "Sales Invoice-so_naming_series",
+                    "Sales Invoice-custom_in_wordsarabic"
                 ]]  
         ]},
          {

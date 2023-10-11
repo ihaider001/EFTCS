@@ -88,6 +88,9 @@ def create_sales_invoice(values,docname):
             "validity":attendee.get("validity"),
             "iqamaid_no":attendee.get("iqamaid_no")
         })
+    sales_invoice.taxes_and_charges = sales_order_details.taxes_and_charges
+    sales_invoice.taxes = sales_order_details.taxes
+    sales_invoice.custom_location = sales_order_details.custom_location
     sales_invoice.save(ignore_permissions=1)
     url = "<a href='{0}/app/sales-invoice/{1}'>{1}</a>".format(frappe.utils.get_url(),sales_invoice.name)
     frappe.msgprint(
