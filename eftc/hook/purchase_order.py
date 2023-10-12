@@ -7,6 +7,8 @@ from pyqrcode import create as qr_create
 from base64 import b64encode
 import datetime 
 from frappe.utils import today
+from eftc.hook.sales_invoice import money_in_words_arabic
+
 
 def generate_qr_code(doc,method):
     # Setting Expiry date for qr code 
@@ -33,3 +35,8 @@ def generate_qr_code(doc,method):
 
     # assigning to document
     doc.db_set("qr_image", _file.file_url)
+
+def convert_number(doc,method):
+    words = money_in_words_arabic(doc.grand_total, doc.currency)
+    doc.custom_in_wordsarabic = words
+    doc.save()

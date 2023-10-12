@@ -5,7 +5,7 @@ def quotation_follow_up_notofication():
             # Fetching All the Quotation Which are approved and notification is not sent for that
             quotations = frappe.get_all("Quotation" ,
                                         filters = {
-                                                "workflow_state" : "Approved",
+                                                "workflow_state" : "Approved By Customer",
                                                 "docstatus":1,
                                                 "is_notified":0
                                                 },

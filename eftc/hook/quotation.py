@@ -10,6 +10,7 @@ from base64 import b64encode
 import datetime 
 from frappe.utils import today , add_to_date ,getdate
 from datetime import datetime
+from eftc.hook.sales_invoice import money_in_words_arabic
 
 @frappe.whitelist()
 def set_qr_code_url(doctype,docname,print_format , field_name ):
@@ -124,3 +125,8 @@ def validate(doc,method):
     for item in doc.items:
         if item.rate == 0:
             frappe.throw("Item rate Cannot be zero! for item {" + item.item_code + "} for row "+str(item.idx))
+    if not doc.custom_in_wordsarabic:
+        words = money_in_words_arabic(doc.grand_total, doc.currency)
+        doc.custom_in_wordsarabic = words
+    if doc.workflow_state == "Reject By Customer":
+        doc.docstatus = 2

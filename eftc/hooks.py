@@ -149,7 +149,8 @@ doc_events = {
         "on_submit":"eftc.hook.purchase_invoice.generate_qr_code"
     },
     "Purchase Order":{
-        "on_submit":"eftc.hook.purchase_order.generate_qr_code"
+        "on_submit":["eftc.hook.purchase_order.generate_qr_code",
+                     "eftc.hook.sales_invoice.convert_number"]
     },
     "Sales Invoice": {
         "on_submit":["eftc.hook.sales_invoice.autoname",
@@ -319,7 +320,9 @@ fixtures = [
                     "Bank Account-custom_swift_code",
                     "Training Schedule-custom_isbilled",
                     "Sales Invoice-so_naming_series",
-                    "Sales Invoice-custom_in_wordsarabic"
+                    "Sales Invoice-custom_in_wordsarabic",
+                    "Quotation-custom_in_wordsarabic",
+                    "Purchase Order-custom_in_wordsarabic"
                 ]]  
         ]},
          {
@@ -329,7 +332,9 @@ fixtures = [
                 "name", "in", [
                    "In Review",
                    "Require Change",
-                   "Draft"
+                   "Draft",
+                   "Approved By Customer",
+                   "Reject By Customer"
                 ]]  
         ]},
         {
