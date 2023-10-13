@@ -130,7 +130,7 @@ doctype_js = {
 # Document Events
 # ---------------
 # Hook on document methods and events
-
+  
 doc_events = {
 	# "*": {
 	# 	"on_update": "method",
