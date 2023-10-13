@@ -12,15 +12,13 @@
   "quantity",
   "duration",
   "rate",
-  "amount",
-  "vat_number",
-  "cr_number"
+  "amount"
  ],
  "fields": [
   {
    "fieldname": "item_code",
    "fieldtype": "Link",
-   "label": "Item Code",
+   "label": "Item Name",
    "options": "Item"
   },
   {
@@ -52,22 +50,12 @@
    "fieldname": "amount",
    "fieldtype": "Currency",
    "label": "Amount"
-  },
-  {
-   "fieldname": "vat_number",
-   "fieldtype": "Data",
-   "label": "Vat Number"
-  },
-  {
-   "fieldname": "cr_number",
-   "fieldtype": "Data",
-   "label": "CR Number"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-10-13 10:00:45.632432",
+ "modified": "2023-10-13 12:56:04.501347",
  "modified_by": "Administrator",
  "module": "EFTC APP",
  "name": "Contract Item",
