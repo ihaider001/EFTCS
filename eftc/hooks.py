@@ -319,7 +319,9 @@ fixtures = [
                     "Bank Account-custom_swift_code",
                     "Training Schedule-custom_isbilled",
                     "Sales Invoice-so_naming_series",
-                    "Sales Invoice-custom_in_wordsarabic"
+                    "Sales Invoice-custom_in_wordsarabic",
+                    "Contract-items",
+                    "Contract-item"
                 ]]  
         ]},
          {
