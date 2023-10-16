@@ -140,7 +140,9 @@ doc_events = {
 	# }
     "Sales Order":{
         "validate": "eftc.hook.sales_order.validate",
-        "on_submit":"eftc.hook.sales_order.on_submit"
+        "on_submit":["eftc.hook.sales_order.on_submit",
+                     "eftc.hook.sales_order.convert_number"]
+        
     },
     "Quotation":{
         "validate": "eftc.hook.quotation.validate",
