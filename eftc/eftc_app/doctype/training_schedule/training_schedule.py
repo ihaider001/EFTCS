@@ -14,37 +14,41 @@ import json
 class TrainingSchedule(Document):
     def on_submit(self):
 
-        # Creating Training Schedule Feedback
-        create_training_schedule_feedback(self)
+        if self.iscompleted:
+
+            # Creating Training Schedule Feedback
+            create_training_schedule_feedback(self)
 
 
-        # Creating Certificate for every attendee on submit of Training schedule
-        for attendee in self.attendees:
-            year = int(attendee.get("validity"))
-            days = year*365
+            # Creating Certificate for every attendee on submit of Training schedule
+            for attendee in self.attendees:
+                year = int(attendee.get("validity"))
+                days = year*365
 
-            expiry_date = frappe.utils.add_days(attendee.get("issue_date"),days),
-            attendee.expiry_date = expiry_date[0]
-            certificate =frappe.get_doc({
-                "doctype":"Certificate",
-                "attendee_name":attendee.get("attendee_name"),
-                "course":attendee.get("course"),
-                "iquama_no":attendee.get("iqamaid_no"),
-                "issue_date":attendee.get("issue_date"),
-                "upload_photo":attendee.get("upload_photo"),
-                "sales_invoice":attendee.get("sales_invoice"),
-                "training_schedule":self.get("name"),
-                "expiry":expiry_date,
-                "trainer_name":self.get("trainer_name"),
-                "created_by": frappe.session.user
-            }).insert(ignore_permissions = True)
-            self.save(ignore_permissions = True)
-            url = "<a href='{0}/app/certificate/{1}'>{2}</a>".format(frappe.utils.get_url(),certificate.name,certificate.attendee_name)
-            frappe.msgprint(
-                _("Certificate Created for {0}".format(frappe.bold(url))),
-                indicator="green",
-                alert=1,
-                )
+                expiry_date = frappe.utils.add_days(attendee.get("issue_date"),days),
+                attendee.expiry_date = expiry_date[0]
+                certificate =frappe.get_doc({
+                    "doctype":"Certificate",
+                    "attendee_name":attendee.get("attendee_name"),
+                    "course":attendee.get("course"),
+                    "iquama_no":attendee.get("iqamaid_no"),
+                    "issue_date":attendee.get("issue_date"),
+                    "upload_photo":attendee.get("upload_photo"),
+                    "sales_invoice":attendee.get("sales_invoice"),
+                    "training_schedule":self.get("name"),
+                    "expiry":expiry_date,
+                    "trainer_name":self.get("trainer_name"),
+                    "created_by": frappe.session.user
+                }).insert(ignore_permissions = True)
+                self.save(ignore_permissions = True)
+                url = "<a href='{0}/app/certificate/{1}'>{2}</a>".format(frappe.utils.get_url(),certificate.name,certificate.attendee_name)
+                frappe.msgprint(
+                    _("Certificate Created for {0}".format(frappe.bold(url))),
+                    indicator="green",
+                    alert=1,
+                    )
+        else:
+            frappe.throw(_("Mark the training schedule as complete first."))
               
 
 
@@ -91,6 +95,8 @@ def create_sales_invoice(values,docname):
     sales_invoice.taxes_and_charges = sales_order_details.taxes_and_charges
     sales_invoice.taxes = sales_order_details.taxes
     sales_invoice.custom_location = sales_order_details.custom_location
+    sales_invoice.tc_name = sales_order_details.tc_name
+    sales_invoice.terms = sales_order_details.terms
     sales_invoice.save(ignore_permissions=1)
     url = "<a href='{0}/app/sales-invoice/{1}'>{1}</a>".format(frappe.utils.get_url(),sales_invoice.name)
     frappe.msgprint(

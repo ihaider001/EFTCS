@@ -325,7 +325,9 @@ fixtures = [
                     "Sales Invoice-so_naming_series",
                     "Sales Invoice-custom_in_wordsarabic",
                     "Contract-items",
-                    "Contract-item"
+                    "Contract-item",
+                    "Quotation-custom_in_wordsarabic",
+                    "Purchase Order-custom_in_wordsarabic"
                 ]]  
         ]},
          {
@@ -335,7 +337,9 @@ fixtures = [
                 "name", "in", [
                    "In Review",
                    "Require Change",
-                   "Draft"
+                   "Draft",
+                   "Approved By Customer",
+                   "Reject By Customer"
                 ]]  
         ]},
         {

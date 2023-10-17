@@ -88,7 +88,7 @@ def money_in_words_arabic(
                 + " "
                 + "هللة"
             )
-
+    out = out + " فقط "
     return out
 
 #
