@@ -48,7 +48,8 @@ doctype_js = {
     "Purchase Order":"public/js/purchase_order.js",
     "Training Schedule":"public/js/training.js",
     "Sales Invoice":"public/js/sales_invoice.js",
-     "Sales Order":"public/js/sales_order.js"
+     "Sales Order":"public/js/sales_order.js",
+     "Contract":"public/js/contract.js"
 }
 # application home page (will override Website Settings)
 # home_page = "login"
@@ -130,7 +131,7 @@ doctype_js = {
 # Document Events
 # ---------------
 # Hook on document methods and events
-
+  
 doc_events = {
 	# "*": {
 	# 	"on_update": "method",
@@ -139,7 +140,9 @@ doc_events = {
 	# }
     "Sales Order":{
         "validate": "eftc.hook.sales_order.validate",
-        "on_submit":"eftc.hook.sales_order.on_submit"
+        "on_submit":["eftc.hook.sales_order.on_submit",
+                     "eftc.hook.sales_order.convert_number"]
+        
     },
     "Quotation":{
         "validate": "eftc.hook.quotation.validate",
@@ -321,6 +324,8 @@ fixtures = [
                     "Training Schedule-custom_isbilled",
                     "Sales Invoice-so_naming_series",
                     "Sales Invoice-custom_in_wordsarabic",
+                    "Contract-items",
+                    "Contract-item",
                     "Quotation-custom_in_wordsarabic",
                     "Purchase Order-custom_in_wordsarabic"
                 ]]  
