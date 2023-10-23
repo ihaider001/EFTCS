@@ -128,6 +128,7 @@ def get_training_schedule(sales_order):
     SELECT name, clientcustomer_name as customer 
     FROM `tabTraining Schedule` 
     WHERE sales_order = '{0}'
+    and docstatus!=2
     """.format(sales_order),as_dict=True)
     return data
 
