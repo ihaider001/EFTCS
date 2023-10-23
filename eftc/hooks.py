@@ -156,6 +156,7 @@ doc_events = {
                      "eftc.hook.purchase_order.convert_number"]
     },
     "Sales Invoice": {
+        "after_insert": "eftc.hook.sales_invoice.update_schedule",
         "on_submit":["eftc.hook.sales_invoice.autoname",
                     "eftc.hook.sales_invoice.convert_number"],
         "on_trash": "eftc.hook.sales_invoice.on_submit"
@@ -327,7 +328,8 @@ fixtures = [
                     "Contract-items",
                     "Contract-item",
                     "Quotation-custom_in_wordsarabic",
-                    "Purchase Order-custom_in_wordsarabic"
+                    "Purchase Order-custom_in_wordsarabic",
+                    "Sales Invoice Item-custom_training_schedule"
                 ]]  
         ]},
          {

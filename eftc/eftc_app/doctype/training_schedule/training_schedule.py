@@ -5,7 +5,7 @@ import frappe
 from frappe.model.document import Document
 from frappe import _
 import json
-
+from frappe.utils import get_url
 
 
 
@@ -82,7 +82,8 @@ def create_sales_invoice(values,docname):
     sales_invoice.append("items",{
         "item_code":training_schedule.course,
         "qty":len(json_data["undefined"]),
-        "amount":len(json_data["undefined"]) * training_schedule.course_amount
+        "amount":len(json_data["undefined"]) * training_schedule.course_amount,
+        "custom_training_schedule": docname
     })
     for attendee in json_data["undefined"]:
         sales_invoice.append("attendee",{
@@ -121,4 +122,43 @@ def create_training_schedule_feedback(self):
         "training_schedule":self.get("name")
         }).insert(ignore_permissions = True , ignore_mandatory = True)
 
+@frappe.whitelist(allow_guest=True)
+def get_training_schedule(sales_order):
+    data =frappe.db.sql("""
+    SELECT name, clientcustomer_name as customer 
+    FROM `tabTraining Schedule` 
+    WHERE sales_order = '{0}'
+    """.format(sales_order),as_dict=True)
+    return data
 
+
+@frappe.whitelist(allow_guest = True)
+def get_attendee(values,sales_invoice):
+    values = json.loads(values)
+    names = [item['name'] for item in values]
+    data = []
+    data_item = []
+    for tr in names:
+        training_doc = frappe.get_doc("Training Schedule",tr)
+        data_item.append({
+            "item_code": training_doc.course,
+            "custom_training_schedule": training_doc.name
+        })
+        if len(training_doc.attendees)==0:
+            doc_link = f"<a href='{get_url('app/training-schedule/' + tr)}'>{tr}</a>"
+            frappe.throw(f"Attendees are missing in training schedule {doc_link}")
+        else:
+            for attendee in training_doc.attendees:
+                data.append({
+                    'name': tr,
+                    'attendee_id': attendee.name,
+                    'attendee_name': attendee.attendee_name,
+                    'iqamaid_no': attendee.iqamaid_no,
+                    'issue_date': attendee.issue_date,
+                    'validity': attendee.validity,
+                    'expiry_date': attendee.expiry_date,
+                    'upload_photo': attendee.upload_photo,
+                    'status': attendee.status
+                })
+
+    return data, data_item
