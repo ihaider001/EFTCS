@@ -3,17 +3,13 @@ from frappe.model.naming import make_autoname
 from frappe import _
 
 def on_submit(doc,method):
-    for attendee in doc.attendee:
-        attendee_name = frappe.db.get_value("Attendees Table",{"parent":doc.training_schedule,"iqamaid_no":attendee.iqamaid_no},"name")
-        frappe.db.set_value("Attendees Table", attendee_name,"sales_invoice", "")
-    training_event = frappe.get_doc("Training Schedule",doc.training_schedule)
-    counter = 0
-    # for attendee in training_event.get("attendees"):
-    #     if attendee.sales_invoice:
-    #         counter+=1
-    # if len(training_event.get("attendees")) == counter:
-    #     training_event.isbillled = 1
-    #     training_event.save()
+    for item in doc.items:
+        for attendee in doc.attendee:
+            attendee_name = frappe.db.get_value("Attendees Table",{"parent":item.custom_training_schedule,"iqamaid_no":attendee.iqamaid_no},"name")
+            if attendee_name != None:
+                frappe.db.set_value("Attendees Table", attendee_name,"sales_invoice", "")
+        counter = 0
+
     frappe.db.commit()
 
 
@@ -126,3 +122,14 @@ number_format_info = {
 
 def get_number_format_info(format: str) -> tuple[str, str, int]:
     return number_format_info.get(format) or (".", ",", 2)
+
+
+def update_schedule(doc,method):
+    if not doc.training_schedule:
+        for item in doc.items:
+            training_schedule = frappe.get_doc("Training Schedule",item.get("custom_training_schedule"))
+            for attendees in doc.attendee:
+                for trainees in training_schedule.attendees:
+                    if attendees.iqamaid_no == trainees.iqamaid_no:
+                        trainees.sales_invoice = doc.name
+            training_schedule.save()
