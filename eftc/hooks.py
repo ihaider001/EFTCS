@@ -341,7 +341,10 @@ fixtures = [
                    "Require Change",
                    "Draft",
                    "Approved By Customer",
-                   "Reject By Customer"
+                   "Reject By Customer",
+                   "Approved",
+                   "Rejected",
+                   
                 ]]  
         ]},
         {
@@ -350,7 +353,12 @@ fixtures = [
             [
                 "name", "in", [
                   "Require Change",
-                  "Save"
+                  "Save",
+                  "Reject By Customer",
+                  "Approved By Customer",
+                  "Review",
+                  "Reject",
+                  "Approve"
                 ]]  
         ]},
         {
