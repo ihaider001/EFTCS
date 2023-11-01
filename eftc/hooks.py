@@ -142,6 +142,7 @@ doc_events = {
         "validate": "eftc.hook.sales_order.validate",
         "on_submit":["eftc.hook.sales_order.on_submit",
                      "eftc.hook.sales_order.convert_number"]
+                    #  "eftc.hook.sales_order.generate_qr_code"
         
     },
     "Quotation":{
