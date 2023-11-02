@@ -17,7 +17,7 @@ frappe.ui.form.on("Sales Invoice", {
             },
             callback: function(response) {
                 // Handle the response here
-                if (response.message) {
+                if (response.message.length!==0) {
                   let dialog = new frappe.ui.Dialog({
                     title: 'Training Schedule',
                     size: "large",
@@ -64,6 +64,25 @@ frappe.ui.form.on("Sales Invoice", {
                                                     frappe.model.set_value(item.doctype, item.name, 'custom_training_schedule', matchingData.custom_training_schedule);
                                                 }
                                             });
+
+                                            // Assuming `item_code` is the property you want to match with your data
+                                            var unmatchedItems = cur_frm.doc.items.filter(function(item) {
+                                              // Assuming `item_code` is the property you want to match with your data
+                                              var matchingData = response.message[1].find(function(data) {
+                                                  return data.item_code === item.item_code;
+                                              });
+                                              return !matchingData; // Return true for unmatched items
+                                            });
+
+                                            // Now `unmatchedItems` will contain the unmatched items
+                                            // You can remove them from cur_frm.doc.items if needed
+                                            unmatchedItems.forEach(function(unmatchedItem) {
+                                              var index = cur_frm.doc.items.indexOf(unmatchedItem);
+                                              if (index > -1) {
+                                                  cur_frm.doc.items.splice(index, 1);
+                                              }
+                                            });
+
                                             
                                               frm.refresh_field("attendee");
                                               frm.refresh_field("items")
@@ -76,6 +95,7 @@ frappe.ui.form.on("Sales Invoice", {
                   dialog.$wrapper.find('.modal-dialog').css("max-width", "1000px");
                 } else {
                     console.error("Error:", response.exc);
+                    frappe.throw("No Training schedule contains attendees.")
                 }
             }
         });
