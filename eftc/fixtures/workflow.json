@@ -105,7 +105,7 @@
   "doctype": "Workflow",
   "document_type": "Quotation",
   "is_active": 1,
-  "modified": "2023-10-27 08:26:32.767697",
+  "modified": "2023-11-03 15:22:14.499926",
   "name": "Quotation",
   "override_status": 0,
   "send_email_alert": 1,
@@ -189,7 +189,7 @@
     "update_value": null
    },
    {
-    "allow_edit": "Sales Manager",
+    "allow_edit": "Sales User",
     "doc_status": "0",
     "is_optional_state": 0,
     "message": null,
