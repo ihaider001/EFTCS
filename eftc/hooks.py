@@ -396,7 +396,8 @@ fixtures = [
                    "Quotation-payment_terms_template-reqd",
                    "Sales Order-delivery_date-reqd",
                    "Sales Invoice-customer_address-reqd",
-                   "Sales Invoice-company_address-reqd"
+                   "Sales Invoice-company_address-reqd",
+                   "Quotation-main-default_print_format"
                    
                 ]]  
         ]},
