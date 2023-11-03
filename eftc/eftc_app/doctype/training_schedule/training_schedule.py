@@ -124,12 +124,19 @@ def create_training_schedule_feedback(self):
 
 @frappe.whitelist(allow_guest=True)
 def get_training_schedule(sales_order):
-    data =frappe.db.sql("""
-    SELECT name, clientcustomer_name as customer 
-    FROM `tabTraining Schedule` 
-    WHERE sales_order = '{0}'
-    and docstatus!=2
-    """.format(sales_order),as_dict=True)
+    # data =frappe.db.sql("""
+    #         SELECT name, clientcustomer_name as customer 
+    #         FROM `tabTraining Schedule` 
+    #         WHERE sales_order = '{0}'
+    #         and docstatus!=2
+    #         """.format(sales_order),as_dict=True)
+    data = frappe.db.sql("""SELECT DISTINCT ts.name, ts.clientcustomer_name AS customer
+                FROM `tabTraining Schedule` ts
+                INNER JOIN `tabAttendees Table` at ON at.parent = ts.name
+                WHERE at.sales_invoice IS NULL
+                AND ts.docstatus != 2
+                AND ts.sales_order = '{0}';
+                """.format(sales_order),as_dict=True)
     return data
 
 
@@ -150,16 +157,17 @@ def get_attendee(values,sales_invoice):
             frappe.throw(f"Attendees are missing in training schedule {doc_link}")
         else:
             for attendee in training_doc.attendees:
-                data.append({
-                    'name': tr,
-                    'attendee_id': attendee.name,
-                    'attendee_name': attendee.attendee_name,
-                    'iqamaid_no': attendee.iqamaid_no,
-                    'issue_date': attendee.issue_date,
-                    'validity': attendee.validity,
-                    'expiry_date': attendee.expiry_date,
-                    'upload_photo': attendee.upload_photo,
-                    'status': attendee.status
-                })
+                if attendee.sales_invoice!="":
+                    data.append({
+                        'name': tr,
+                        'attendee_id': attendee.name,
+                        'attendee_name': attendee.attendee_name,
+                        'iqamaid_no': attendee.iqamaid_no,
+                        'issue_date': attendee.issue_date,
+                        'validity': attendee.validity,
+                        'expiry_date': attendee.expiry_date,
+                        'upload_photo': attendee.upload_photo,
+                        'status': attendee.status
+                    })
 
     return data, data_item
