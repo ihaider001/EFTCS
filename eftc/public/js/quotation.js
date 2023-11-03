@@ -31,6 +31,9 @@ frappe.ui.form.on("Quotation", {
                 frm.set_value("customer_name_in_arabic", customer_name);
                 frm.set_value("customer_name", customer_name);
                 frm.refresh_field("customer_name_in_arabic");
+                if (!frm.doc.__islocal) {
+                    frm.save()
+                }
             })
             .catch((err) => {
                 frappe.throw("Arabic name not set in customer.")
@@ -42,6 +45,9 @@ frappe.ui.form.on("Quotation", {
             const customer_name = response.message.customer_name_in_arabic;
             frm.set_value("customer_name_in_arabic",customer_name);
             frm.refresh_field("customer_name_in_arabic");
+            if (!frm.doc.__islocal) {
+                frm.save()
+            }
         })
         .catch((err) => {
             frappe.throw("Arabic name not set in customer.")
