@@ -24,28 +24,35 @@ frappe.ui.form.on("Quotation", {
  },
  onload_post_render:function(frm) {
     console.log(frm.doc.party_name)
-    if (frm.doc.quotation_to === "Lead" && frm.doc.docstatus === 0) {
-        let customer_name = frappe.db.get_value("Customer",{"lead_name":frm.doc.party_name},"customer_name_in_arabic")
-        .then((response) => {
+    if (frm.doc.quotation_to === "Lead" && frm.doc.docstatus === 0 ) {
+        if(frm.doc.customer_name_in_arabic == null || frm.doc.customer_name == null){
+            let customer_name = frappe.db.get_value("Customer",{"lead_name":frm.doc.party_name},"customer_name_in_arabic")
+            .then((response) => {
+                    const customer_name = response.message.customer_name_in_arabic;
+                    frm.set_value("customer_name_in_arabic", customer_name);
+                    frm.set_value("customer_name", customer_name);
+                    frm.refresh_field("customer_name_in_arabic");
+                    frm.refresh_field("customer_name");
+                })
+                .catch((err) => {
+                    frappe.throw("Arabic name not set in customer.")
+                });
+        }
+    }
+    else if (frm.doc.quotation_to === "Customer" && frm.doc.party_name && frm.doc.docstatus === 0) {
+        if(frm.doc.customer_name_in_arabic == null || frm.doc.customer_name == null){
+            let customer_name = frappe.db.get_value("Customer",frm.doc.party_name,"customer_name_in_arabic")
+            .then((response) => {
                 const customer_name = response.message.customer_name_in_arabic;
-                frm.set_value("customer_name_in_arabic", customer_name);
+                frm.set_value("customer_name_in_arabic",customer_name);
                 frm.set_value("customer_name", customer_name);
                 frm.refresh_field("customer_name_in_arabic");
+                frm.refresh_field("customer_name");
             })
             .catch((err) => {
                 frappe.throw("Arabic name not set in customer.")
-            });
-    }
-    else if (frm.doc.quotation_to === "Customer" && frm.doc.party_name && frm.doc.docstatus === 0) {
-        let customer_name = frappe.db.get_value("Customer",frm.doc.party_name,"customer_name_in_arabic")
-        .then((response) => {
-            const customer_name = response.message.customer_name_in_arabic;
-            frm.set_value("customer_name_in_arabic",customer_name);
-            frm.refresh_field("customer_name_in_arabic");
-        })
-        .catch((err) => {
-            frappe.throw("Arabic name not set in customer.")
-        })
+            })
+        }
     }
  },
  customer_name:function(frm) {
