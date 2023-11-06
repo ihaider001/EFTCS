@@ -55,7 +55,7 @@ def qr_code_scanning_with_validation():
     try:
         #  Fetching Arguments From Api
         args =  args = frappe.local.request.args 
-        print_format_url = "/api/method/frappe.utils.print_format.download_pdf?doctype={doctype}&name={docname}&format={print_format}&no_letterhead=0&letterhead=EFTC%20Letter%20Head&settings=%7B%7D&_lang=en".format(
+        print_format_url = "/api/method/frappe.utils.print_format.download_pdf?doctype={doctype}&name={docname}&format={print_format}&no_letterhead=0&letterhead=Sales%20Quotation&settings=%7B%7D&_lang=en".format(
                                 doctype = args.get("doctype") ,
                                 docname = args.get("name"),
                                 print_format = args.get("format")
