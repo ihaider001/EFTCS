@@ -437,6 +437,28 @@ fixtures = [
             ]
         ]
     },
+    {
+        "dt": "Notification",
+        "filters": [
+            [
+                "name", "in", [
+                   "Quotation Notification-Approved",
+                   "Quotation Notification-Require Change",
+                   "Quotation Notification-In Review",
+                   "Quotation Notification-Rejected",
+                   "Quotation Notification-Approved By Customer",
+                   "Quotation Notification-Reject By Customer",
+                   "Training Schedule Approval Request",
+                   "Exit Interview Scheduled",
+                   "Training Scheduled",
+                   "Material Request Receipt Notification",
+                   "Retention Bonus",
+                   "Notification for new fiscal year",
+                   "Training Feedback",
+                ]
+            ]
+        ]
+    },
 
 ]
 
