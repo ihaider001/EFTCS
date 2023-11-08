@@ -18,34 +18,30 @@ def get_columns():
             "width": 200,
         },
         {
-            "label": _("Quotation Name"),
-            "fieldname": "name",
-            "fieldtype": "Link",
-            "options": "Quotation",
+            "label": _("Quotation status"),
+            "fieldname": "workflow_state",
+            "fieldtype": "Data",
             "width": 200,
         },
     ]
 
     return columns
 
-def get_data(filters=None):
+def get_data(filters = None):
     conditions = ""
-    
+
     if filters.get('from_date') and filters.get('to_date'):
-        conditions = "  AND quotation.transaction_date BETWEEN {0} AND {1}".format(
+        conditions = "  AND transaction_date BETWEEN {0} AND {1}".format(
             frappe.db.escape(filters.get('from_date')), 
             frappe.db.escape(filters.get('to_date'))
         )
+    reject_quote = frappe.db.sql("""Select count(*) as count_quotation from `tabQuotation` where workflow_state = 'Reject By Customer'""".format(conditions), as_dict=True)
+    total_quote = frappe.db.sql("""Select count(*) as count_quotation from `tabQuotation` where workflow_state != 'Reject By Customer'""".format(conditions), as_dict=True)
+    result_list = [
+        {'workflow_state': 'Reject By Customer', 'count_quotation': reject_quote[0]['count_quotation']},
+        {'workflow_state': 'Others', 'count_quotation': total_quote[0]['count_quotation']}
+    ]
+    return result_list
 
-    data = frappe.db.sql("""
-        SELECT COUNT(name) as count_quotation, name
-        FROM `tabQuotation` quotation
-        WHERE quotation.docstatus = 2 
-          AND quotation.workflow_state = 'Reject By Customer' 
-          {}
-        GROUP BY name
-        LIMIT 10
-    """.format(conditions), as_dict=True)
 
-    return data
 
