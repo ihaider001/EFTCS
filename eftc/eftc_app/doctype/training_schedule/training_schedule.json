@@ -128,13 +128,13 @@
   },
   {
    "fieldname": "start_time",
-   "fieldtype": "Date",
+   "fieldtype": "Datetime",
    "label": "Start Date",
    "reqd": 1
   },
   {
    "fieldname": "end_time",
-   "fieldtype": "Date",
+   "fieldtype": "Datetime",
    "label": "End  Date ",
    "reqd": 1
   },
@@ -210,6 +210,7 @@
    "label": "Upload Attendence"
   },
   {
+   "allow_bulk_edit": 1,
    "fieldname": "attendees",
    "fieldtype": "Table",
    "label": "Attendees",
@@ -245,7 +246,8 @@
    "fieldname": "trainer",
    "fieldtype": "Link",
    "label": "Trainer ",
-   "options": "Employee"
+   "options": "Employee",
+   "reqd": 1
   },
   {
    "fieldname": "created_by",
@@ -293,7 +295,7 @@
    "link_fieldname": "training_schedule"
   }
  ],
- "modified": "2023-10-10 14:20:40.163307",
+ "modified": "2023-11-07 15:54:54.776911",
  "modified_by": "Administrator",
  "module": "EFTC APP",
  "name": "Training Schedule",

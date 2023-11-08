@@ -49,6 +49,15 @@ class TrainingSchedule(Document):
                     )
         else:
             frappe.throw(_("Mark the training schedule as complete first."))
+
+    def before_save(self):
+        try:
+            atte_no = [atte_.iqamaid_no for atte_ in self.attendees]
+            if len(atte_no) != len(set(atte_no)):
+                frappe.msgprint(_("Duplicate IQAMA/ID NO in Attendees Table"))
+
+        except Exception as e:
+            raise e
               
 
 

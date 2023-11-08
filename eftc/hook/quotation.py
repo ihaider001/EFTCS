@@ -55,7 +55,7 @@ def qr_code_scanning_with_validation():
     try:
         #  Fetching Arguments From Api
         args =  args = frappe.local.request.args 
-        print_format_url = "/api/method/frappe.utils.print_format.download_pdf?doctype={doctype}&name={docname}&format={print_format}&no_letterhead=0&letterhead=EFTC%20Letter%20Head&settings=%7B%7D&_lang=en".format(
+        print_format_url = "/api/method/frappe.utils.print_format.download_pdf?doctype={doctype}&name={docname}&format={print_format}&no_letterhead=0&letterhead=Sales%20Quotation&settings=%7B%7D&_lang=en".format(
                                 doctype = args.get("doctype") ,
                                 docname = args.get("name"),
                                 print_format = args.get("format")
@@ -122,6 +122,8 @@ def get_mobile(custom_sales_representative):
 
 
 def validate(doc,method):
+    doc.customer_name_in_arabic = frappe.db.get_value("Customer", {"lead_name":doc.party_name}, "customer_name_in_arabic")
+    doc.customer_name = frappe.db.get_value("Customer", {"lead_name":doc.party_name}, "customer_name_in_arabic")
     for item in doc.items:
         if item.rate == 0:
             frappe.throw("Item rate Cannot be zero! for item {" + item.item_code + "} for row "+str(item.idx))

@@ -11,7 +11,7 @@ app_license = "MIT"
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/eftc/css/eftc.css"
+# app_include_css = "/assets/eftc/css/print.css"
 # app_include_js = "/assets/eftc/js/eftc.js"
 
 # include js, css files in header of web template
@@ -433,6 +433,21 @@ fixtures = [
                 "in",
                 [
                    "Home"
+                ]
+            ]
+        ]
+    },
+    {
+        "dt": "Notification",
+        "filters": [
+            [
+                "name", "in", [
+                   "Quotation Notification-Approved",
+                   "Quotation Notification-Require Change",
+                   "Quotation Notification-In Review",
+                   "Quotation Notification-Rejected",
+                   "Quotation Notification-Approved By Customer",
+                   "Quotation Notification-Reject By Customer"
                 ]
             ]
         ]
