@@ -1,17 +1,16 @@
 {
  "chart_name": "Rejected Quotation",
  "chart_type": "Report",
- "creation": "2023-10-17 13:07:07.443055",
- "custom_options": "{\"x_field\": \"name\", \"chart_type\": \"Line\", \"y_axis_fields\": [{\"idx\": 1, \"__islocal\": true, \"name\": \"row 1\", \"y_field\": \"count_quotation\"}], \"y_fields\": [\"count_quotation\"], \"colors\": [null]}",
+ "creation": "2023-11-08 09:19:40.590566",
+ "custom_options": "{\"x_field\": \"workflow_state\", \"chart_type\": \"Pie\", \"y_axis_fields\": [{\"idx\": 1, \"__islocal\": true, \"name\": \"row 1\", \"y_field\": \"count_quotation\", \"color\": \"#761ACB\"}], \"y_fields\": [\"count_quotation\"], \"colors\": [\"#761ACB\"]}",
  "docstatus": 0,
  "doctype": "Dashboard Chart",
- "dynamic_filters_json": "",
- "filters_json": "{\"from_date\":\"2023-09-18\",\"to_date\":\"2023-10-18\",\"company\":\"Environment Friend Training Center\"}",
+ "filters_json": "{\"from_date\":\"2023-10-08\",\"to_date\":\"2023-11-08\",\"company\":\"Environment Friend Training Center\"}",
  "group_by_type": "Count",
  "idx": 0,
- "is_public": 1,
+ "is_public": 0,
  "is_standard": 1,
- "modified": "2023-10-18 12:01:10.806622",
+ "modified": "2023-11-08 09:20:56.915812",
  "modified_by": "Administrator",
  "module": "EFTC APP",
  "name": "Rejected Quotation",
@@ -22,11 +21,12 @@
  "time_interval": "Yearly",
  "timeseries": 0,
  "timespan": "Last Year",
- "type": "Line",
+ "type": "Percentage",
  "use_report_chart": 0,
- "x_field": "name",
+ "x_field": "workflow_state",
  "y_axis": [
   {
+   "color": "#761ACB",
    "y_field": "count_quotation"
   }
  ]
