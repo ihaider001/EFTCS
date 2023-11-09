@@ -50,11 +50,15 @@ class TrainingSchedule(Document):
         else:
             frappe.throw(_("Mark the training schedule as complete first."))
 
-    def before_save(self):
+    def validate(self):
         try:
-            atte_no = [atte_.iqamaid_no for atte_ in self.attendees]
-            if len(atte_no) != len(set(atte_no)):
-                frappe.msgprint(_("Duplicate IQAMA/ID NO in Attendees Table"))
+            iqamaid_ = []
+            dup_ele = []
+            for row in self.attendees:
+                dup_ele.append(row.iqamaid_no) if row.iqamaid_no in iqamaid_ else iqamaid_.append(row.iqamaid_no)
+
+            if len(dup_ele) >0 :
+                frappe.throw(_("Duplicate IQAMA/ID NO: {0} in Attendees Table.").format(frappe.bold(', '.join(str(x) for x in set(dup_ele)))))
 
         except Exception as e:
             raise e

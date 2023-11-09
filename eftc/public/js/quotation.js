@@ -26,11 +26,12 @@ frappe.ui.form.on("Quotation", {
     console.log(frm.doc.party_name)
     if (frm.doc.quotation_to === "Lead" && frm.doc.docstatus === 0 ) {
         if(frm.doc.customer_name_in_arabic == null || frm.doc.customer_name == null){
-            let customer_name = frappe.db.get_value("Customer",{"lead_name":frm.doc.party_name},"customer_name_in_arabic")
+            let customer_name = frappe.db.get_value("Customer",{"lead_name":frm.doc.party_name},["customer_name_in_arabic","customer_name"])
             .then((response) => {
                     const customer_name = response.message.customer_name_in_arabic;
+                    const cust_name = response.message.customer_name;
                     frm.set_value("customer_name_in_arabic", customer_name);
-                    frm.set_value("customer_name", customer_name);
+                    frm.set_value("customer_name", cust_name);
                     frm.refresh_field("customer_name_in_arabic");
                     frm.refresh_field("customer_name");
                 })
@@ -41,11 +42,12 @@ frappe.ui.form.on("Quotation", {
     }
     else if (frm.doc.quotation_to === "Customer" && frm.doc.party_name && frm.doc.docstatus === 0) {
         if(frm.doc.customer_name_in_arabic == null || frm.doc.customer_name == null){
-            let customer_name = frappe.db.get_value("Customer",frm.doc.party_name,"customer_name_in_arabic")
+            let customer_name = frappe.db.get_value("Customer",frm.doc.party_name,["customer_name_in_arabic","customer_name"])
             .then((response) => {
                 const customer_name = response.message.customer_name_in_arabic;
+                const cust_name = response.message.customer_name;
                 frm.set_value("customer_name_in_arabic",customer_name);
-                frm.set_value("customer_name", customer_name);
+                frm.set_value("customer_name", cust_name);
                 frm.refresh_field("customer_name_in_arabic");
                 frm.refresh_field("customer_name");
             })
