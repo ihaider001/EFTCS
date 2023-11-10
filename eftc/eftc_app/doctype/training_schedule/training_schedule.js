@@ -85,5 +85,35 @@ frappe.ui.form.on('Attendees Table', {
 		frappe.db.get_doc("Item",cur_frm.doc.course).then(r=>{
 		frappe.model.set_value(cdt, cdn, 'course', r.item_name)
 		})
+	},
+	iqamaid_no:function(frm,cdt,cdn){
+		var d  = locals[cdt][cdn];
+		var iqamaid_ = [];
+		var dup_iqamaid_ = [];
+		var current_iqamaid_no = d.iqamaid_no
+	
+		var cnt = 0;
+		frm.doc.attendees.forEach(function(e){
+			if(iqamaid_.includes(e["iqamaid_no"])){
+				if(current_iqamaid_no == e["iqamaid_no"]){
+					frappe.model.set_value(cdt, cdn, 'iqamaid_no', "")
+				}
+				if(e["iqamaid_no"] == ""){
+					dup_iqamaid_.push(current_iqamaid_no);
+				}else{
+					dup_iqamaid_.push(e["iqamaid_no"]);
+				}
+				cnt += 1;
+			}else{
+				if(e["iqamaid_no"] != ""){
+					iqamaid_.push(e["iqamaid_no"]);
+				}
+			}
+		})
+		
+		if (cnt > 0){
+			frappe.msgprint(__('Duplicate IQAMA/ID NO: '+dup_iqamaid_+' in Attendees Table'));
+		}
+
 	}
 });
