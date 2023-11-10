@@ -92,15 +92,18 @@ def qr_code_scanning_with_validation():
                 return "QR Code Expired"
 
         elif args.get("doctype") == "Certificate":
-            certificate = frappe.get_doc("Certificate",args.get("name")) 
-            if getdate() < certificate.expiry :
-                frappe.local.response["http_status_code"] = 303
-                frappe.local.response["type"] = "redirect"
-                frappe.local.response["location"] = print_format_url
-            
-            else :
+            certificate = frappe.get_doc("Certificate",args.get("name"))
+            if certificate.status == "Inactive":
+                frappe.local.response["http_status_code"] = 403
+                return "Inactive QR Code"
+
+            if getdate() > certificate.expiry:
                 frappe.local.response["http_status_code"] = 498
                 return "QR Code Expired"
+
+            frappe.local.response["http_status_code"] = 303
+            frappe.local.response["type"] = "redirect"
+            frappe.local.response["location"] = print_format_url
                 
 
         else:

@@ -22,7 +22,8 @@
   "qr_image",
   "training_schedule",
   "expiry",
-  "created_by"
+  "created_by",
+  "status"
  ],
  "fields": [
   {
@@ -116,11 +117,18 @@
    "fieldtype": "Select",
    "label": "Naming Series",
    "options": "EFTC-"
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nInactive"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-10-06 14:30:32.796368",
+ "modified": "2023-11-10 13:52:33.482361",
  "modified_by": "Administrator",
  "module": "EFTC APP",
  "name": "Certificate",
