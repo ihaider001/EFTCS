@@ -38,8 +38,8 @@ def get_data(filters = None):
     reject_quote = frappe.db.sql("""Select count(*) as count_quotation from `tabQuotation` where workflow_state = 'Reject By Customer'""".format(conditions), as_dict=True)
     total_quote = frappe.db.sql("""Select count(*) as count_quotation from `tabQuotation` where workflow_state != 'Reject By Customer'""".format(conditions), as_dict=True)
     result_list = [
-        {'workflow_state': 'Reject By Customer', 'count_quotation': reject_quote[0]['count_quotation']},
-        {'workflow_state': 'Others', 'count_quotation': total_quote[0]['count_quotation']}
+        {'workflow_state': 'Others', 'count_quotation': total_quote[0]['count_quotation']},
+        {'workflow_state': 'Reject By Customer', 'count_quotation': reject_quote[0]['count_quotation']}
     ]
     return result_list
 
