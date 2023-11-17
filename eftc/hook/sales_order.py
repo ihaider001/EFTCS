@@ -59,7 +59,7 @@ def generate_qr_code(doc,method):
 				"file_name":filename,
 				"is_private": 0,
 				"content": qr_image.getvalue(),
-				"attached_to_doctype": "Quotation",
+				"attached_to_doctype": "Sales Order",
 				"attached_to_name":doc.name,
                 "attached_to_field": "qr_image",
 			}
