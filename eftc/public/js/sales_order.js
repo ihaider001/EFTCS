@@ -1,5 +1,14 @@
 frappe.ui.form.on("Sales Order", {
-	refresh : function (frm) {     
+	refresh : function (frm) {    
+		frappe.call({
+            method:"eftc.hook.quotation.set_qr_code_url",
+            args:{
+                doctype:"Sales Order",
+				docname:frm.doc.name,
+				print_format : "Sales Order",
+				field_name:"qr_code_url"
+            },
+        }) 
 		cur_frm.set_value("disable_rounded_total",1)  
 		frm.set_df_property('disable_rounded_total', 'hidden',1); 
    },
