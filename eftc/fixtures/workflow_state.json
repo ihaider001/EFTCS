@@ -61,5 +61,77 @@
   "name": "Reject By Customer",
   "style": "Danger",
   "workflow_state_name": "Reject By Customer"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2023-11-16 09:50:48.767635",
+  "name": "Request Confirmation",
+  "style": "",
+  "workflow_state_name": "Request Confirmation"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2023-11-16 09:51:38.931601",
+  "name": "Waiting Confirmation",
+  "style": "",
+  "workflow_state_name": "Waiting Confirmation"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2023-11-16 09:53:14.162941",
+  "name": "Confirm",
+  "style": "",
+  "workflow_state_name": "Confirm"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2023-11-16 09:54:28.663917",
+  "name": "Waiting Attendance",
+  "style": "",
+  "workflow_state_name": "Waiting Attendance"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2023-11-16 09:55:04.241071",
+  "name": "Confirm Attendance",
+  "style": "",
+  "workflow_state_name": "Confirm Attendance"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2023-11-16 09:55:26.230756",
+  "name": "Waiting Submit",
+  "style": "",
+  "workflow_state_name": "Waiting Submit"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2023-11-16 09:55:45.955154",
+  "name": "Submit",
+  "style": "",
+  "workflow_state_name": "Submit"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow State",
+  "icon": "",
+  "modified": "2023-11-16 09:56:12.051614",
+  "name": "Complete",
+  "style": "",
+  "workflow_state_name": "Complete"
  }
 ]

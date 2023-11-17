@@ -345,6 +345,14 @@ fixtures = [
                    "Reject By Customer",
                    "Approved",
                    "Rejected",
+                   "Request Confirmation",
+                   "Waiting Confirmation",
+                   "Confirm",
+                   "Waiting Attendance",
+                   "Confirm Attendance",
+                   "Waiting Submit",
+                   "Submit",
+                   "Complete"
                    
                 ]]  
         ]},
@@ -359,7 +367,12 @@ fixtures = [
                   "Approved By Customer",
                   "Review",
                   "Reject",
-                  "Approve"
+                  "Approve",
+                  "Waiting Confirmation",
+                  "Request Confirmation",
+                  "Confirm",
+                  "Confirm Attendance",
+                  "Submit"
                 ]]  
         ]},
         {
@@ -368,7 +381,8 @@ fixtures = [
             [
                 "name", "in", [
                     "Quotation",
-                    "Purchase Order Workflow"
+                    "Purchase Order Workflow",
+                    "Training Schedule Workflow"
                 ]]  
         ]},
         {
@@ -408,7 +422,8 @@ fixtures = [
                 "name",
                 "in",
                 [
-                   "Operation Manager"
+                   "Operation Manager",
+                   "Admin Operation"
                 ]
             ]
         ]
