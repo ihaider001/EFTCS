@@ -47,5 +47,40 @@
   "modified": "2023-10-27 08:25:55.191515",
   "name": "Reject By Customer",
   "workflow_action_name": "Reject By Customer"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2023-11-16 10:12:00.712114",
+  "name": "Waiting Confirmation",
+  "workflow_action_name": "Waiting Confirmation"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2023-11-16 10:13:46.900994",
+  "name": "Request Confirmation",
+  "workflow_action_name": "Request Confirmation"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2023-11-16 10:21:21.308781",
+  "name": "Confirm",
+  "workflow_action_name": "Confirm"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2023-11-16 10:24:12.605057",
+  "name": "Confirm Attendance",
+  "workflow_action_name": "Confirm Attendance"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow Action Master",
+  "modified": "2023-11-16 10:25:00.372382",
+  "name": "Submit",
+  "workflow_action_name": "Submit"
  }
 ]
