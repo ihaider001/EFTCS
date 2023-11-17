@@ -295,7 +295,7 @@
    "link_fieldname": "training_schedule"
   }
  ],
- "modified": "2023-11-07 15:54:54.776911",
+ "modified": "2023-11-16 10:41:27.841439",
  "modified_by": "Administrator",
  "module": "EFTC APP",
  "name": "Training Schedule",
@@ -312,6 +312,20 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Admin Operation",
+   "select": 1,
+   "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],

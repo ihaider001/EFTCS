@@ -105,10 +105,10 @@
   "doctype": "Workflow",
   "document_type": "Quotation",
   "is_active": 1,
-  "modified": "2023-11-03 15:22:14.499926",
+  "modified": "2023-11-16 16:50:06.069382",
   "name": "Quotation",
   "override_status": 0,
-  "send_email_alert": 1,
+  "send_email_alert": 0,
   "states": [
    {
     "allow_edit": "Sales User",
@@ -295,6 +295,183 @@
    }
   ],
   "workflow_name": "Quotation",
+  "workflow_state_field": "workflow_state"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Workflow",
+  "document_type": "Training Schedule",
+  "is_active": 1,
+  "modified": "2023-11-16 10:42:54.624356",
+  "name": "Training Schedule Workflow",
+  "override_status": 0,
+  "send_email_alert": 0,
+  "states": [
+   {
+    "allow_edit": "All",
+    "doc_status": "0",
+    "is_optional_state": 0,
+    "message": null,
+    "next_action_email_template": null,
+    "parent": "Training Schedule Workflow",
+    "parentfield": "states",
+    "parenttype": "Workflow",
+    "state": "Draft",
+    "update_field": null,
+    "update_value": null
+   },
+   {
+    "allow_edit": "All",
+    "doc_status": "0",
+    "is_optional_state": 0,
+    "message": null,
+    "next_action_email_template": null,
+    "parent": "Training Schedule Workflow",
+    "parentfield": "states",
+    "parenttype": "Workflow",
+    "state": "Request Confirmation",
+    "update_field": null,
+    "update_value": null
+   },
+   {
+    "allow_edit": "All",
+    "doc_status": "0",
+    "is_optional_state": 0,
+    "message": null,
+    "next_action_email_template": null,
+    "parent": "Training Schedule Workflow",
+    "parentfield": "states",
+    "parenttype": "Workflow",
+    "state": "Waiting Confirmation",
+    "update_field": null,
+    "update_value": null
+   },
+   {
+    "allow_edit": "Admin Operation",
+    "doc_status": "0",
+    "is_optional_state": 0,
+    "message": null,
+    "next_action_email_template": null,
+    "parent": "Training Schedule Workflow",
+    "parentfield": "states",
+    "parenttype": "Workflow",
+    "state": "Confirm",
+    "update_field": null,
+    "update_value": null
+   },
+   {
+    "allow_edit": "Admin Operation",
+    "doc_status": "0",
+    "is_optional_state": 0,
+    "message": null,
+    "next_action_email_template": null,
+    "parent": "Training Schedule Workflow",
+    "parentfield": "states",
+    "parenttype": "Workflow",
+    "state": "Waiting Attendance",
+    "update_field": null,
+    "update_value": null
+   },
+   {
+    "allow_edit": "Admin Operation",
+    "doc_status": "0",
+    "is_optional_state": 0,
+    "message": null,
+    "next_action_email_template": null,
+    "parent": "Training Schedule Workflow",
+    "parentfield": "states",
+    "parenttype": "Workflow",
+    "state": "Confirm Attendance",
+    "update_field": null,
+    "update_value": null
+   },
+   {
+    "allow_edit": "Admin Operation",
+    "doc_status": "0",
+    "is_optional_state": 0,
+    "message": null,
+    "next_action_email_template": null,
+    "parent": "Training Schedule Workflow",
+    "parentfield": "states",
+    "parenttype": "Workflow",
+    "state": "Waiting Submit",
+    "update_field": null,
+    "update_value": null
+   },
+   {
+    "allow_edit": "Admin Operation",
+    "doc_status": "1",
+    "is_optional_state": 0,
+    "message": null,
+    "next_action_email_template": null,
+    "parent": "Training Schedule Workflow",
+    "parentfield": "states",
+    "parenttype": "Workflow",
+    "state": "Submit",
+    "update_field": null,
+    "update_value": null
+   },
+   {
+    "allow_edit": "Admin Operation",
+    "doc_status": "1",
+    "is_optional_state": 0,
+    "message": null,
+    "next_action_email_template": null,
+    "parent": "Training Schedule Workflow",
+    "parentfield": "states",
+    "parenttype": "Workflow",
+    "state": "Complete",
+    "update_field": null,
+    "update_value": null
+   }
+  ],
+  "transitions": [
+   {
+    "action": "Request Confirmation",
+    "allow_self_approval": 1,
+    "allowed": "All",
+    "condition": null,
+    "next_state": "Waiting Confirmation",
+    "parent": "Training Schedule Workflow",
+    "parentfield": "transitions",
+    "parenttype": "Workflow",
+    "state": "Draft"
+   },
+   {
+    "action": "Confirm",
+    "allow_self_approval": 1,
+    "allowed": "Admin Operation",
+    "condition": null,
+    "next_state": "Waiting Attendance",
+    "parent": "Training Schedule Workflow",
+    "parentfield": "transitions",
+    "parenttype": "Workflow",
+    "state": "Waiting Confirmation"
+   },
+   {
+    "action": "Confirm Attendance",
+    "allow_self_approval": 1,
+    "allowed": "Admin Operation",
+    "condition": null,
+    "next_state": "Waiting Submit",
+    "parent": "Training Schedule Workflow",
+    "parentfield": "transitions",
+    "parenttype": "Workflow",
+    "state": "Waiting Attendance"
+   },
+   {
+    "action": "Submit",
+    "allow_self_approval": 1,
+    "allowed": "Admin Operation",
+    "condition": "",
+    "next_state": "Complete",
+    "parent": "Training Schedule Workflow",
+    "parentfield": "transitions",
+    "parenttype": "Workflow",
+    "state": "Waiting Submit"
+   }
+  ],
+  "workflow_name": "Training Schedule Workflow",
   "workflow_state_field": "workflow_state"
  }
 ]
