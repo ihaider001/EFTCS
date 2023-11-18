@@ -170,7 +170,7 @@ def get_attendee(values,sales_invoice):
             frappe.throw(f"Attendees are missing in training schedule {doc_link}")
         else:
             for attendee in training_doc.attendees:
-                if attendee.sales_invoice!="":
+                if not attendee.sales_invoice:
                     data.append({
                         'name': tr,
                         'attendee_id': attendee.name,

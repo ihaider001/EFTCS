@@ -12,16 +12,15 @@ def execute(filters=None):
 def get_columns():
     columns = [
         {
-            "label": _("Close Quotation"),
-            "fieldname": "count_quotation",
+            "label": _("Status"),
+            "fieldname": "status",
             "fieldtype": "Data",
             "width": 200,
         },
         {
-            "label": _("Quotation Name"),
-            "fieldname": "name",
-            "fieldtype": "Link",
-            "options": "Quotation",
+            "label": _("Percentage"),
+            "fieldname": "percentage",
+            "fieldtype": "Float",
             "width": 200,
         },
     ]
@@ -29,24 +28,21 @@ def get_columns():
     return columns
 
 def get_data(filters=None):
-    conditions = ""
+    total_quotations = frappe.db.sql("""
+        SELECT COUNT(name) as total_quotations
+        FROM `tabQuotation` quotation
+    """, as_dict=True)[0]['total_quotations']
 
-    if filters.get('from_date') and filters.get('to_date'):
-        conditions = "AND quotation.transaction_date BETWEEN {0} AND {1}".format(
-            frappe.db.escape(filters.get('from_date')), 
-            frappe.db.escape(filters.get('to_date'))
-        )
-
-    data = frappe.db.sql("""
-        SELECT COUNT(name) as count_quotation, name
+    approved_quotations = frappe.db.sql("""
+        SELECT COUNT(name) as approved_quotations
         FROM `tabQuotation` quotation
         WHERE quotation.docstatus = 1
           AND quotation.workflow_state = 'Approved By Customer'
-          {}
-        GROUP BY name
-        LIMIT 10
-    """.format(conditions), as_dict=True)
+    """, as_dict=True)[0]['approved_quotations']
+
+    data = [
+        {'status': 'Approved By Customer', 'percentage': (approved_quotations / total_quotations) * 100},
+        {'status': 'Other', 'percentage': ((total_quotations - approved_quotations) / total_quotations) * 100},
+    ]
 
     return data
-
-

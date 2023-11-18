@@ -23,11 +23,17 @@ def get_columns():
             "fieldtype": "Data",
             "width": 200,
         },
+        {
+            "label": _("Percentage"),
+            "fieldname": "percentage",
+            "fieldtype": "Float",
+            "width": 200,
+        },
     ]
 
     return columns
 
-def get_data(filters = None):
+def get_data(filters=None):
     conditions = ""
 
     if filters.get('from_date') and filters.get('to_date'):
@@ -35,13 +41,26 @@ def get_data(filters = None):
             frappe.db.escape(filters.get('from_date')), 
             frappe.db.escape(filters.get('to_date'))
         )
-    reject_quote = frappe.db.sql("""Select count(*) as count_quotation from `tabQuotation` where workflow_state = 'Reject By Customer'""".format(conditions), as_dict=True)
-    total_quote = frappe.db.sql("""Select count(*) as count_quotation from `tabQuotation` where workflow_state != 'Reject By Customer'""".format(conditions), as_dict=True)
-    result_list = [
-        {'workflow_state': 'Others', 'count_quotation': total_quote[0]['count_quotation']},
-        {'workflow_state': 'Reject By Customer', 'count_quotation': reject_quote[0]['count_quotation']}
+
+    reject_quote = frappe.db.sql("""
+        SELECT COUNT(*) as count_quotation
+        FROM `tabQuotation`
+        WHERE workflow_state = 'Reject By Customer'
+        {0}
+    """.format(conditions), as_dict=True)[0]['count_quotation']
+
+    total_quote = frappe.db.sql("""
+        SELECT COUNT(*) as count_quotation
+        FROM `tabQuotation`
+        WHERE workflow_state != 'Reject By Customer'
+        {0}
+    """.format(conditions), as_dict=True)[0]['count_quotation']
+
+    total_quotations_count = reject_quote + total_quote
+
+    data = [
+        {'workflow_state': 'Others', 'count_quotation': total_quote, 'percentage': (total_quote / total_quotations_count) * 100},
+        {'workflow_state': 'Reject By Customer', 'count_quotation': reject_quote, 'percentage': (reject_quote / total_quotations_count) * 100}
     ]
-    return result_list
 
-
-
+    return data
