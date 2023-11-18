@@ -41,8 +41,8 @@ def get_data(filters=None):
     """, as_dict=True)[0]['approved_quotations']
 
     data = [
-        {'status': 'Approved By Customer', 'percentage': (approved_quotations / total_quotations) * 100},
         {'status': 'Other', 'percentage': ((total_quotations - approved_quotations) / total_quotations) * 100},
+        {'status': 'Approved By Customer', 'percentage': (approved_quotations / total_quotations) * 100}
     ]
 
     return data
