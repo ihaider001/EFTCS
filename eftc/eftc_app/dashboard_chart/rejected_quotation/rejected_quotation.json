@@ -10,7 +10,7 @@
  "idx": 0,
  "is_public": 0,
  "is_standard": 1,
- "modified": "2023-11-18 09:15:36.381123",
+ "modified": "2023-11-18 10:08:30.346478",
  "modified_by": "Administrator",
  "module": "EFTC APP",
  "name": "Rejected Quotation",
@@ -21,17 +21,13 @@
  "time_interval": "Yearly",
  "timeseries": 0,
  "timespan": "Last Year",
- "type": "Bar",
+ "type": "Percentage",
  "use_report_chart": 0,
  "x_field": "workflow_state",
  "y_axis": [
   {
    "color": "#29CD42",
    "y_field": "percentage"
-  },
-  {
-   "color": "#761ACB",
-   "y_field": "count_quotation"
   }
  ]
 }
