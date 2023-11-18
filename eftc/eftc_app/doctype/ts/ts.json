@@ -1,0 +1,127 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "TSC-.######",
+ "creation": "2023-11-17 12:24:37.254789",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "clientcustomer_name",
+  "training_schedule",
+  "sales_order",
+  "course",
+  "course_name",
+  "column_break_jrhfo",
+  "start_date",
+  "end_date",
+  "trainer",
+  "trainer_email",
+  "trainer_name",
+  "section_break_tnab7",
+  "course_and_trainer_name"
+ ],
+ "fields": [
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Datetime",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Datetime",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "clientcustomer_name",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Client/Customer Name",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "sales_order",
+   "fieldtype": "Link",
+   "label": "Sales Order",
+   "options": "Sales Order"
+  },
+  {
+   "fieldname": "training_schedule",
+   "fieldtype": "Link",
+   "label": "Training Schedule",
+   "options": "Training Schedule"
+  },
+  {
+   "fieldname": "trainer",
+   "fieldtype": "Link",
+   "label": "Trainer",
+   "options": "Employee"
+  },
+  {
+   "fetch_from": "trainer.user_id",
+   "fieldname": "trainer_email",
+   "fieldtype": "Data",
+   "label": "Trainer Email"
+  },
+  {
+   "fetch_from": "trainer.employee_name",
+   "fieldname": "trainer_name",
+   "fieldtype": "Data",
+   "label": "Trainer Name"
+  },
+  {
+   "fieldname": "course",
+   "fieldtype": "Link",
+   "label": "Course",
+   "options": "Item"
+  },
+  {
+   "fetch_from": "course.item_name",
+   "fieldname": "course_name",
+   "fieldtype": "Data",
+   "label": "Course Name"
+  },
+  {
+   "fieldname": "course_and_trainer_name",
+   "fieldtype": "Small Text",
+   "label": "Course and trainer Name"
+  },
+  {
+   "fieldname": "column_break_jrhfo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_tnab7",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "in_create": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2023-11-18 09:09:55.593315",
+ "modified_by": "Administrator",
+ "module": "EFTC APP",
+ "name": "TS",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "read_only": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

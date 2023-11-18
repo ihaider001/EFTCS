@@ -6,6 +6,8 @@ from frappe.model.document import Document
 from frappe import _
 import json
 from frappe.utils import get_url
+import datetime
+
 
 
 
@@ -62,8 +64,50 @@ class TrainingSchedule(Document):
 
         except Exception as e:
             raise e
-              
 
+        # Creating Training Schedule calender
+        create_training_schedule_calender(self)
+
+def create_training_schedule_calender(self):
+    try:
+        # ------------start For Delete existing TS Calender Doc ----------------
+        ts_name = frappe.db.get_list("TS",filters={"training_schedule": self.name},pluck='name')
+        for doc in ts_name:
+            frappe.delete_doc("TS", doc)
+        # ------------End For Delete existing TS Calender Doc ----------------
+
+        start_obj = datetime.datetime.strptime(self.start_time, '%Y-%m-%d')
+        end_obj = datetime.datetime.strptime(self.end_time, '%Y-%m-%d')
+
+        # consider the start date as YYYY, mm, dd
+        start_date = datetime.date(int(start_obj.strftime("%Y")), int(start_obj.strftime("%m")), int(start_obj.strftime("%d")))
+
+        # consider the end date as YYYYY, mm, dd
+        end_date = datetime.date(int(end_obj.strftime("%Y")), int(end_obj.strftime("%m")), int(end_obj.strftime("%d")))
+
+        # delta time
+        delta = datetime.timedelta(days=1)
+
+        # iterate over range of dates
+        while (start_date <= end_date):
+            ts = frappe.new_doc("TS")
+            ts.start_date = str(start_date) +" "+ self.starting_time
+            ts.end_date = str(start_date) +" "+ self.ending_time
+            ts.clientcustomer_name = self.clientcustomer_name
+            ts.sales_order = self.sales_order
+            ts.training_schedule = self.name
+            ts.trainer = self.trainer
+            ts.trainer_email = self.trainer_email
+            ts.trainer_name = self.trainer_name
+            ts.course = self.course
+            ts.course_name = self.course_name
+            ts.course_and_trainer_name = self.trainer_name + " :-"+ self.course_name
+            ts.save()
+
+            start_date += delta
+
+    except Exception as e:
+        raise
 
 @frappe.whitelist()
 @frappe.validate_and_sanitize_search_inputs

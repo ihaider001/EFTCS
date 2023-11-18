@@ -27,7 +27,9 @@
   "location",
   "column_break_ax0v0",
   "start_time",
+  "starting_time",
   "end_time",
+  "ending_time",
   "amended_from",
   "section_break_zvcy7",
   "travel_from",
@@ -128,13 +130,13 @@
   },
   {
    "fieldname": "start_time",
-   "fieldtype": "Datetime",
+   "fieldtype": "Date",
    "label": "Start Date",
    "reqd": 1
   },
   {
    "fieldname": "end_time",
-   "fieldtype": "Datetime",
+   "fieldtype": "Date",
    "label": "End  Date ",
    "reqd": 1
   },
@@ -276,6 +278,18 @@
    "fieldtype": "Float",
    "hidden": 1,
    "label": "Course Amount"
+  },
+  {
+   "fieldname": "starting_time",
+   "fieldtype": "Time",
+   "label": "Starting Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ending_time",
+   "fieldtype": "Time",
+   "label": "Ending Time",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
@@ -295,7 +309,7 @@
    "link_fieldname": "training_schedule"
   }
  ],
- "modified": "2023-11-16 10:41:27.841439",
+ "modified": "2023-11-17 17:27:39.620566",
  "modified_by": "Administrator",
  "module": "EFTC APP",
  "name": "Training Schedule",
