@@ -1,8 +1,3 @@
-console.log("%%%%%%%%%%%%%%%%%  start   %%%%%%%%%%%  training schedule calender calender view")
-var text1 = "Hello";
-var text2 = "world!";
-var result = text1.concat(" ", text2);
-console.log("TTTTTTTTTTTTTTTT00",result)
 frappe.views.calendar['TS'] = {
     field_map: {
         start: 'start_date',
@@ -18,5 +13,3 @@ frappe.views.calendar['TS'] = {
         Private: 'info'
     }
 }
-
-console.log("%%%%%%%%%%%%%%%%%  End   %%%%%%%%%%%  training schedule calender calender view")
