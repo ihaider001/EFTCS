@@ -76,8 +76,15 @@ def create_training_schedule_calender(self):
             frappe.delete_doc("TS", doc)
         # ------------End For Delete existing TS Calender Doc ----------------
 
-        start_obj = datetime.datetime.strptime(self.start_time, '%Y-%m-%d')
-        end_obj = datetime.datetime.strptime(self.end_time, '%Y-%m-%d')
+        if isinstance(self.start_time, str):
+            start_obj = datetime.datetime.strptime(self.start_time, '%Y-%m-%d')
+        else:
+            start_obj = self.start_time
+
+        if isinstance(self.end_time, str):
+            end_obj = datetime.datetime.strptime(self.end_time, '%Y-%m-%d')
+        else:
+            end_obj = self.end_time
 
         # consider the start date as YYYY, mm, dd
         start_date = datetime.date(int(start_obj.strftime("%Y")), int(start_obj.strftime("%m")), int(start_obj.strftime("%d")))
@@ -91,8 +98,8 @@ def create_training_schedule_calender(self):
         # iterate over range of dates
         while (start_date <= end_date):
             ts = frappe.new_doc("TS")
-            ts.start_date = str(start_date) +" "+ self.starting_time
-            ts.end_date = str(start_date) +" "+ self.ending_time
+            ts.start_date = str(start_date) +" "+ str(self.starting_time)
+            ts.end_date = str(start_date) +" "+ str(self.ending_time)
             ts.clientcustomer_name = self.clientcustomer_name
             ts.sales_order = self.sales_order
             ts.training_schedule = self.name
@@ -101,7 +108,16 @@ def create_training_schedule_calender(self):
             ts.trainer_name = self.trainer_name
             ts.course = self.course
             ts.course_name = self.course_name
-            ts.course_and_trainer_name = self.trainer_name + " :-"+ self.course_name
+            if self.trainer_name and self.course_name:
+                ts.course_and_trainer_name = self.trainer_name + " :-"+ self.course_name
+            elif not self.trainer_name and self.course_name:
+                ts.course_and_trainer_name =  self.course_name
+            elif self.trainer_name and not self.course_name:
+                ts.course_and_trainer_name =  self.trainer_name
+            else:
+                ts.course_and_trainer_name = ""
+
+
             ts.save()
 
             start_date += delta
