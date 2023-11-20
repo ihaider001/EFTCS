@@ -148,6 +148,12 @@ def create_sales_invoice(values,docname):
     # Sales Order Details
     sales_order_details = frappe.get_doc("Sales Order",training_schedule.sales_order)
     
+    # Fetching Item Details
+    item = frappe.get_doc("Item",training_schedule.course)
+    for item_tax in item.taxes:
+        item_tax_template = item_tax.item_tax_template
+
+    
     # Creating Sales Invoice 
     sales_invoice = frappe.new_doc("Sales Invoice")
     sales_invoice.customer = sales_order_details.customer
@@ -158,7 +164,8 @@ def create_sales_invoice(values,docname):
         "item_code":training_schedule.course,
         "qty":len(json_data["undefined"]),
         "amount":len(json_data["undefined"]) * training_schedule.course_amount,
-        "custom_training_schedule": docname
+        "custom_training_schedule": docname,
+        "item_tax_template":item_tax_template if item_tax_template else " "
     })
     for attendee in json_data["undefined"]:
         sales_invoice.append("attendee",{
@@ -167,6 +174,7 @@ def create_sales_invoice(values,docname):
             "issue_date":attendee.get("issue_date"),
             "validity":attendee.get("validity"),
             "iqamaid_no":attendee.get("iqamaid_no")
+
         })
     sales_invoice.taxes_and_charges = sales_order_details.taxes_and_charges
     sales_invoice.taxes = sales_order_details.taxes
