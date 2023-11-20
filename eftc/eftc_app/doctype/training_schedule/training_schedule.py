@@ -65,6 +65,8 @@ class TrainingSchedule(Document):
         except Exception as e:
             raise e
 
+
+    def after_save(self):
         # Creating Training Schedule calender
         create_training_schedule_calender(self)
 
