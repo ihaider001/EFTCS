@@ -380,9 +380,9 @@ fixtures = [
         [
             [
                 "name", "in", [
-                    "Quotation",
                     "Purchase Order Workflow",
-                    "Training Schedule Workflow"
+                    "Training Schedule Workflow",
+                    "Quotation",
                 ]]  
         ]},
         {
