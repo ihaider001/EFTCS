@@ -45,7 +45,6 @@
   "section_break_mkk1j",
   "training_meeting_link",
   "attendees_section",
-  "upload_attendence",
   "attendees",
   "color",
   "created_by",
@@ -207,11 +206,6 @@
    "label": "Attendees"
   },
   {
-   "fieldname": "upload_attendence",
-   "fieldtype": "Button",
-   "label": "Upload Attendence"
-  },
-  {
    "allow_bulk_edit": 1,
    "fieldname": "attendees",
    "fieldtype": "Table",
@@ -309,7 +303,7 @@
    "link_fieldname": "training_schedule"
   }
  ],
- "modified": "2023-11-17 17:27:39.620566",
+ "modified": "2023-11-21 12:58:37.662752",
  "modified_by": "Administrator",
  "module": "EFTC APP",
  "name": "Training Schedule",

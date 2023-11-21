@@ -105,7 +105,7 @@
   "doctype": "Workflow",
   "document_type": "Quotation",
   "is_active": 1,
-  "modified": "2023-11-16 16:50:06.069382",
+  "modified": "2023-11-21 11:44:27.454287",
   "name": "Quotation",
   "override_status": 0,
   "send_email_alert": 0,
@@ -151,7 +151,7 @@
    },
    {
     "allow_edit": "Sales Manager",
-    "doc_status": "0",
+    "doc_status": "1",
     "is_optional_state": 0,
     "message": null,
     "next_action_email_template": null,
@@ -177,7 +177,7 @@
    },
    {
     "allow_edit": "Sales User",
-    "doc_status": "0",
+    "doc_status": "1",
     "is_optional_state": 0,
     "message": null,
     "next_action_email_template": null,
@@ -185,19 +185,6 @@
     "parentfield": "states",
     "parenttype": "Workflow",
     "state": "Reject By Customer",
-    "update_field": null,
-    "update_value": null
-   },
-   {
-    "allow_edit": "Sales User",
-    "doc_status": "0",
-    "is_optional_state": 0,
-    "message": null,
-    "next_action_email_template": null,
-    "parent": "Quotation",
-    "parentfield": "states",
-    "parenttype": "Workflow",
-    "state": "Require Change",
     "update_field": null,
     "update_value": null
    },
