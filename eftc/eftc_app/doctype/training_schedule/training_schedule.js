@@ -34,6 +34,15 @@ frappe.ui.form.on('Training Schedule', {
 	before_save:function(frm){
 		frm.set_value("total_participants" , frm.doc.attendees.length)
 	},
+	after_save: function(frm) {
+
+		frappe.call({
+			method:"eftc.eftc_app.doctype.training_schedule.training_schedule.create_training_schedule_calender",
+			args:{
+				"data":frm.doc
+			}
+		})
+	},
 	create_sales_invoice: function(frm) {
 		let attendee_data = []
 		for ( var attendee in frm.doc.attendees){

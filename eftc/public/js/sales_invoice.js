@@ -49,7 +49,8 @@ frappe.ui.form.on("Sales Invoice", {
                                               for ( var attendee in response.message[0]){ 
                                               var child_table = cur_frm.add_child('attendee', {
                                                 iqamaid_no: response.message[0][attendee]["iqamaid_no"],
-                                                attendee_name: response.message[0][attendee]["attendee_name"]
+                                                attendee_name: response.message[0][attendee]["attendee_name"],
+                                                course: response.message[0][attendee]["course"]
                                             //     // Add more fields as needed
                                             });
                                               }
