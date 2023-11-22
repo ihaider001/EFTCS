@@ -40,3 +40,9 @@ def convert_number(doc,method):
     words = money_in_words_arabic(doc.grand_total, doc.currency)
     doc.custom_in_wordsarabic = words
     doc.save()
+
+def after_insert(doc,method):
+    from eftc.hook.quotation import set_qr_code_url
+    url=set_qr_code_url("Purchase Order",doc.name,"Purchase Order","qr_code_url")
+    doc.qr_code_url=url
+    doc.save()

@@ -1,14 +1,5 @@
 frappe.ui.form.on("Quotation", {
     refresh : function (frm) {
-        frappe.call({
-            method:"eftc.hook.quotation.set_qr_code_url",
-            args:{
-                doctype:"Quotation",
-				docname:frm.doc.name,
-				print_format : "Quotation",
-				field_name:"qr_code_url"
-            },
-        })
         frm.fields_dict['rounding_adjustment'].df.hidden = 1; 
         frm.fields_dict['rounded_total'].df.hidden = 1;
         frm.refresh_field("rounding_adjustment"); 

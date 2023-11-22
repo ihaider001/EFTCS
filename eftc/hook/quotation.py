@@ -19,7 +19,8 @@ def set_qr_code_url(doctype,docname,print_format , field_name ):
           docname = docname,
           print_format = print_format
           )
-    frappe.db.set_value(doctype, docname, field_name, url, update_modified=False)
+    return url
+    # frappe.db.set_value(doctype, docname, field_name, url, update_modified=False)
 
 
 def generate_qr_code(doc,method):
@@ -104,6 +105,17 @@ def qr_code_scanning_with_validation():
             frappe.local.response["http_status_code"] = 303
             frappe.local.response["type"] = "redirect"
             frappe.local.response["location"] = print_format_url
+        elif args.get("doctype") == "Sales Order":
+            sales_order = frappe.get_doc("Sales Order",args.get("name"))
+            # # Getting Valid Upto Date of QR code
+            valid_upto = add_to_date(sales_order.modified, days=30,  as_datetime=True)
+            if datetime.now() < valid_upto :
+                frappe.local.response["http_status_code"] = 303
+                frappe.local.response["type"] = "redirect"
+                frappe.local.response["location"] = print_format_url
+            else :
+                frappe.local.response["http_status_code"] = 498
+                return "QR Code Expired Please contact your training provider"    
                 
 
         else:
@@ -135,3 +147,8 @@ def validate(doc,method):
         doc.custom_in_wordsarabic = words
     if doc.workflow_state == "Reject By Customer":
         doc.docstatus = 2
+
+def after_insert(doc,method):
+    url=set_qr_code_url("Quotation",doc.name,"Quotation","qr_code_url")
+    doc.qr_code_url=url
+    doc.save()
