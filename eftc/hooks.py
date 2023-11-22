@@ -140,6 +140,7 @@ doc_events = {
 	# }
     "Sales Order":{
         "validate": "eftc.hook.sales_order.validate",
+        "after_insert":"eftc.hook.sales_order.after_insert",
         "on_submit":["eftc.hook.sales_order.on_submit",
                      "eftc.hook.sales_order.convert_number",
                      "eftc.hook.sales_order.generate_qr_code"]
@@ -147,12 +148,15 @@ doc_events = {
     },
     "Quotation":{
         "validate": "eftc.hook.quotation.validate",
-        "on_submit":"eftc.hook.quotation.generate_qr_code"
+        "on_submit":"eftc.hook.quotation.generate_qr_code",
+        "after_insert": "eftc.hook.quotation.after_insert",
     },
     "Purchase Invoice":{
-        "on_submit":"eftc.hook.purchase_invoice.generate_qr_code"
+        "on_submit":"eftc.hook.purchase_invoice.generate_qr_code",
+        "after_insert":"eftc.hook.purchase_invoice.after_insert"
     },
     "Purchase Order":{
+        "after_insert":"eftc.hook.purchase_order.after_insert",
         "on_submit":["eftc.hook.purchase_order.generate_qr_code",
                      "eftc.hook.purchase_order.convert_number"]
     },

@@ -36,3 +36,9 @@ def generate_qr_code(doc,method):
 
     # assigning to document
     doc.db_set("qr_image", _file.file_url)
+
+def after_insert(doc,method):
+    from eftc.hook.quotation import set_qr_code_url
+    url=set_qr_code_url("Purchase Invoice",doc.name,"Purchase Return","qr_code_url")
+    doc.qr_code_url=url
+    doc.save()
