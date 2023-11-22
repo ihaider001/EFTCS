@@ -1,0 +1,33 @@
+{
+ "chart_name": "Top Due Invoices",
+ "chart_type": "Report",
+ "creation": "2023-11-21 16:46:00.476002",
+ "custom_options": "{\"x_field\": \"sales_person\", \"chart_type\": \"Bar\", \"y_axis_fields\": [{\"idx\": 1, \"__islocal\": true, \"name\": \"row 1\", \"y_field\": \"total_outstanding_amount\", \"color\": \"#761ACB\"}], \"y_fields\": [\"total_outstanding_amount\"], \"colors\": [\"#761ACB\"]}",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "filters_json": "{\"company\":\"Environment Friend Training Center\",\"sales_person\":\"info@eftcsaudi.com\"}",
+ "group_by_type": "Count",
+ "idx": 0,
+ "is_public": 0,
+ "is_standard": 1,
+ "modified": "2023-11-21 16:46:00.520619",
+ "modified_by": "Administrator",
+ "module": "EFTC APP",
+ "name": "Top Due Invoices",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "report_name": "Top Due Invoices",
+ "roles": [],
+ "time_interval": "Yearly",
+ "timeseries": 0,
+ "timespan": "Last Year",
+ "type": "Bar",
+ "use_report_chart": 0,
+ "x_field": "sales_person",
+ "y_axis": [
+  {
+   "color": "#761ACB",
+   "y_field": "total_outstanding_amount"
+  }
+ ]
+}
