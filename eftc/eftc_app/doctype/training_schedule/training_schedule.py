@@ -69,24 +69,20 @@ class TrainingSchedule(Document):
     def after_save(self):
         # Creating Training Schedule calender
         create_training_schedule_calender(self)
-
-def create_training_schedule_calender(self):
+@frappe.whitelist()
+def create_training_schedule_calender(data):
     try:
+        if isinstance(data,str):
+            data = frappe.parse_json(data)
+        print(data,"datataaa")    
         # ------------start For Delete existing TS Calender Doc ----------------
-        ts_name = frappe.db.get_list("TS",filters={"training_schedule": self.name},pluck='name')
+        ts_name = frappe.db.get_list("TS",filters={"training_schedule": data.name},pluck='name')
         for doc in ts_name:
             frappe.delete_doc("TS", doc)
         # ------------End For Delete existing TS Calender Doc ----------------
 
-        if isinstance(self.start_time, str):
-            start_obj = datetime.datetime.strptime(self.start_time, '%Y-%m-%d')
-        else:
-            start_obj = self.start_time
-
-        if isinstance(self.end_time, str):
-            end_obj = datetime.datetime.strptime(self.end_time, '%Y-%m-%d')
-        else:
-            end_obj = self.end_time
+        start_obj = datetime.datetime.strptime(data.start_time, "%Y-%m-%d")
+        end_obj = datetime.datetime.strptime(data.end_time, "%Y-%m-%d")
 
         # consider the start date as YYYY, mm, dd
         start_date = datetime.date(int(start_obj.strftime("%Y")), int(start_obj.strftime("%m")), int(start_obj.strftime("%d")))
@@ -100,22 +96,22 @@ def create_training_schedule_calender(self):
         # iterate over range of dates
         while (start_date <= end_date):
             ts = frappe.new_doc("TS")
-            ts.start_date = str(start_date) +" "+ str(self.starting_time)
-            ts.end_date = str(start_date) +" "+ str(self.ending_time)
-            ts.clientcustomer_name = self.clientcustomer_name
-            ts.sales_order = self.sales_order
-            ts.training_schedule = self.name
-            ts.trainer = self.trainer
-            ts.trainer_email = self.trainer_email
-            ts.trainer_name = self.trainer_name
-            ts.course = self.course
-            ts.course_name = self.course_name
-            if self.trainer_name and self.course_name:
-                ts.course_and_trainer_name = self.trainer_name + " :-"+ self.course_name
-            elif not self.trainer_name and self.course_name:
-                ts.course_and_trainer_name =  self.course_name
-            elif self.trainer_name and not self.course_name:
-                ts.course_and_trainer_name =  self.trainer_name
+            ts.start_date = str(start_date) +" "+ str(data.starting_time)
+            ts.end_date = str(start_date) +" "+ str(data.ending_time)
+            ts.clientcustomer_name = data.clientcustomer_name
+            ts.sales_order = data.sales_order
+            ts.training_schedule = data.name
+            ts.trainer = data.trainer
+            ts.trainer_email = data.trainer_email
+            ts.trainer_name = data.trainer_name
+            ts.course = data.course
+            ts.course_name = data.course_name
+            if data.trainer_name and data.course_name:
+                ts.course_and_trainer_name = data.trainer_name + " :-"+ data.course_name
+            elif not data.trainer_name and data.course_name:
+                ts.course_and_trainer_name =  data.course_name
+            elif data.trainer_name and not data.course_name:
+                ts.course_and_trainer_name =  data.trainer_name
             else:
                 ts.course_and_trainer_name = ""
 
@@ -243,6 +239,7 @@ def get_attendee(values,sales_invoice):
                 if not attendee.sales_invoice:
                     data.append({
                         'name': tr,
+                        'course':training_doc.course,
                         'attendee_id': attendee.name,
                         'attendee_name': attendee.attendee_name,
                         'iqamaid_no': attendee.iqamaid_no,

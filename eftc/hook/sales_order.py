@@ -11,6 +11,7 @@ import datetime
 from frappe.utils import today , add_to_date ,getdate
 from datetime import datetime
 from eftc.hook.sales_invoice import money_in_words_arabic
+from eftc.eftc_app.doctype.training_schedule.training_schedule import create_training_schedule_calender
 
 def on_submit(doc , event):
     
@@ -31,6 +32,7 @@ def on_submit(doc , event):
             "training_mode":doc.custom_training_mode_     })
         training_event.insert(ignore_permissions=True,
                               ignore_mandatory=True)
+        create_training_schedule_calender(training_event)
         url = "<a href='{0}/app/training-schedule/{1}'>{1}</a>".format(frappe.utils.get_url(),training_event.name)
         frappe.msgprint(
             _("Training Event Created {0}".format(frappe.bold(url))),
