@@ -1,0 +1,33 @@
+{
+ "chart_name": "Top Creditor User",
+ "chart_type": "Report",
+ "creation": "2023-11-23 07:04:29.737251",
+ "custom_options": "{\"x_field\": \"Customer\", \"chart_type\": \"Bar\", \"y_axis_fields\": [{\"idx\": 1, \"__islocal\": true, \"name\": \"row 1\", \"y_field\": \"TotalSalesAmount\", \"color\": \"#EC864B\"}], \"y_fields\": [\"TotalSalesAmount\"], \"colors\": [\"#EC864B\"]}",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "filters_json": "{\"company\":\"Environment Friend Training Center\",\"sales_person\":\"info@eftcsaudi.com\"}",
+ "group_by_type": "Count",
+ "idx": 0,
+ "is_public": 0,
+ "is_standard": 1,
+ "modified": "2023-11-23 07:04:29.938405",
+ "modified_by": "Administrator",
+ "module": "EFTC APP",
+ "name": "Top Creditor User",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "report_name": "Top Creditor",
+ "roles": [],
+ "time_interval": "Yearly",
+ "timeseries": 0,
+ "timespan": "Last Year",
+ "type": "Bar",
+ "use_report_chart": 0,
+ "x_field": "Customer",
+ "y_axis": [
+  {
+   "color": "#EC864B",
+   "y_field": "TotalSalesAmount"
+  }
+ ]
+}
