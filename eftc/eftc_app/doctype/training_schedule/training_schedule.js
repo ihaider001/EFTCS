@@ -2,6 +2,13 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on('Training Schedule', {
+	validate:function(frm){
+		for( var attendee in frm.doc.attendees){
+			var cdn = frm.doc.attendees[attendee]["name"]
+			frappe.model.set_value("Attendees Table", cdn, "course", frm.doc.course_name)
+			
+		}
+	},
 	onload: function(frm) {
 		frm.set_query('attendee', 'attendees', () => {
 			return {
@@ -90,11 +97,6 @@ frappe.ui.form.on('Training Schedule', {
 });
 
 frappe.ui.form.on('Attendees Table', {
-	attendee_name:function(frm,cdt,cdn){
-		frappe.db.get_doc("Item",cur_frm.doc.course).then(r=>{
-		frappe.model.set_value(cdt, cdn, 'course', r.item_name)
-		})
-	},
 	iqamaid_no:function(frm,cdt,cdn){
 		var d  = locals[cdt][cdn];
 		var iqamaid_ = [];
