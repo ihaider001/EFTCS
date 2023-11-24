@@ -9,5 +9,5 @@ def permission_query_for_training_schedule(user):
     if "Training Manager" in roles and not "System Manager" in roles:
         employee = frappe.get_doc("Employee",{"user_id":user})
         if employee:
-            return """`tabTraining Schedule`.trainer = '{}' and docstatus = 1 """.format(employee.name)
+            return """`tabTraining Schedule`.trainer = '{}' """.format(employee.name)
         
