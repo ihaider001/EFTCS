@@ -99,7 +99,7 @@
  "in_create": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-11-18 09:09:55.593315",
+ "modified": "2023-11-24 14:41:53.962439",
  "modified_by": "Administrator",
  "module": "EFTC APP",
  "name": "TS",
@@ -115,11 +115,12 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "select": 1,
    "share": 1,
    "write": 1
   }
  ],
- "read_only": 1,
+ "read_only": 0,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
