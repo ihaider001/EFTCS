@@ -2,22 +2,17 @@
  "cards": [
   {
    "card": "REJECTED Quotation"
+  },
+  {
+   "card": "Total Due Amount"
+  },
+  {
+   "card": "Total Paid Amount"
   }
  ],
  "charts": [
   {
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
-   "chart": "Top Customers",
-   "width": "Half"
-  },
-  {
->>>>>>> Stashed changes
    "chart": "quotation convert sales order",
-=======
-   "chart": "Quotation Convert Sales Order",
->>>>>>> Stashed changes
    "width": "Half"
   },
   {
@@ -41,15 +36,7 @@
    "width": "Half"
   },
   {
-<<<<<<< Updated upstream
-   "chart": "Top 5 creator due Amount",
-=======
-<<<<<<< Updated upstream
-   "chart": "Top 5 creator due Amount-1",
-=======
    "chart": "Top Pending",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
    "width": "Half"
   },
   {
@@ -61,25 +48,6 @@
    "width": "Half"
   },
   {
-<<<<<<< Updated upstream
-   "chart": "Today Closed Tasks",
-=======
-<<<<<<< Updated upstream
-   "chart": "User wise Open events",
-   "width": "Half"
-  },
-  {
-   "chart": "Today Closed Up Events",
-   "width": "Half"
-  },
-  {
-   "chart": "Total Events User Wise",
->>>>>>> Stashed changes
-   "width": "Half"
-  },
-  {
-=======
->>>>>>> Stashed changes
    "chart": "Rejection Reason",
    "width": "Full"
   },
@@ -92,17 +60,7 @@
    "width": "Half"
   },
   {
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
    "chart": "Close Quotation Ratio",
-   "width": "Half"
-  },
-  {
-<<<<<<< Updated upstream
-   "chart": "Top 5 Selling Customer",
    "width": "Half"
   },
   {
@@ -110,17 +68,6 @@
    "width": "Half"
   },
   {
-   "chart": "Total Tasks User Wise",
-   "width": "Half"
-  },
-  {
-=======
-   "chart": "Open Tasks User Wise",
-   "width": "Half"
-  },
-  {
->>>>>>> Stashed changes
->>>>>>> Stashed changes
    "chart": "Rejected Quotation",
    "width": "Full"
   },
@@ -160,15 +107,7 @@
  "idx": 0,
  "is_default": 0,
  "is_standard": 1,
-<<<<<<< Updated upstream
- "modified": "2023-11-23 07:04:29.986068",
-=======
-<<<<<<< Updated upstream
- "modified": "2023-11-08 09:19:40.670491",
-=======
- "modified": "2023-11-23 17:09:16.536933",
->>>>>>> Stashed changes
->>>>>>> Stashed changes
+ "modified": "2023-11-23 20:55:16.897276",
  "modified_by": "Administrator",
  "module": "EFTC APP",
  "name": "Sales Dashboard",

@@ -1,19 +1,6 @@
 {
  "chart_name": "Total Tasks User Wise",
  "chart_type": "Report",
-<<<<<<< Updated upstream
- "creation": "2023-11-03 15:02:05.294261",
- "custom_options": "{\"x_field\": \"allocated_to\", \"chart_type\": \"Bar\", \"y_axis_fields\": [{\"idx\": 1, \"__islocal\": true, \"name\": \"row 1\", \"y_field\": \"count\", \"color\": \"#ffbdbd\"}], \"y_fields\": [\"count\"], \"colors\": [\"#ffbdbd\"]}",
- "docstatus": 0,
- "doctype": "Dashboard Chart",
- "dynamic_filters_json": "",
- "filters_json": "{\"allocated_to\":\"hsetrainer@eftcsaudi.com\"}",
- "group_by_type": "Count",
- "idx": 0,
- "is_public": 1,
- "is_standard": 1,
- "modified": "2023-11-17 16:46:10.546704",
-=======
  "creation": "2023-11-23 17:09:16.497741",
  "custom_options": "{\"x_field\": \"allocated_to\", \"chart_type\": \"Bar\", \"y_axis_fields\": [{\"idx\": 1, \"__islocal\": true, \"name\": \"row 1\", \"y_field\": \"count\", \"color\": \"#39E4A5\"}], \"y_fields\": [\"count\"], \"colors\": [\"#39E4A5\"]}",
  "docstatus": 0,
@@ -24,17 +11,12 @@
  "is_public": 0,
  "is_standard": 1,
  "modified": "2023-11-23 17:09:16.518954",
->>>>>>> Stashed changes
  "modified_by": "Administrator",
  "module": "EFTC APP",
  "name": "Total Tasks User Wise",
  "number_of_groups": 0,
  "owner": "Administrator",
-<<<<<<< Updated upstream
- "report_name": "Total Events",
-=======
  "report_name": "Total Tasks User Wise",
->>>>>>> Stashed changes
  "roles": [],
  "time_interval": "Yearly",
  "timeseries": 0,
@@ -44,11 +26,7 @@
  "x_field": "allocated_to",
  "y_axis": [
   {
-<<<<<<< Updated upstream
-   "color": "#ffbdbd",
-=======
    "color": "#39E4A5",
->>>>>>> Stashed changes
    "y_field": "count"
   }
  ]

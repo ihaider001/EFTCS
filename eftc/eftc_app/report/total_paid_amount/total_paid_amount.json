@@ -1,0 +1,40 @@
+{
+ "add_total_row": 0,
+ "columns": [
+  {
+   "fieldname": "total_payments_received",
+   "fieldtype": "Currency",
+   "label": "Total Payment Recieved",
+   "width": 0
+  }
+ ],
+ "creation": "2023-11-23 20:49:09.826628",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "modified": "2023-11-23 20:51:49.451301",
+ "modified_by": "Administrator",
+ "module": "EFTC APP",
+ "name": "Total Paid Amount",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT \n    SUM(paid.paid_amount) AS total_payments_received\nFROM \n    `tabSales Invoice` AS si\nJOIN \n    `tabPayment Entry Reference` AS per ON si.name = per.reference_name\nJOIN \n    `tabPayment Entry` AS paid ON per.parent = paid.name\nWHERE \n    si.docstatus = 1 -- Assuming '1' represents the status for submitted/approved invoices\n    AND paid.docstatus = 1; -- Assuming '1' represents the status for submitted/approved payments\n\n",
+ "ref_doctype": "Sales Invoice",
+ "report_name": "Total Paid Amount",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "Accounts User"
+  },
+  {
+   "role": "Accounts Manager"
+  },
+  {
+   "role": "Employee Self Service"
+  }
+ ]
+}
