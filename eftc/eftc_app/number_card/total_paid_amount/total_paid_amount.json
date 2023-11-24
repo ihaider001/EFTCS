@@ -1,0 +1,22 @@
+{
+ "creation": "2023-11-23 20:55:16.819797",
+ "docstatus": 0,
+ "doctype": "Number Card",
+ "filters_json": "{}",
+ "function": "Count",
+ "idx": 0,
+ "is_public": 0,
+ "is_standard": 1,
+ "label": "Total Paid Amount",
+ "modified": "2023-11-23 20:55:16.875627",
+ "modified_by": "Administrator",
+ "module": "EFTC APP",
+ "name": "Total Paid Amount",
+ "owner": "Administrator",
+ "report_field": "total_payments_received",
+ "report_function": "Sum",
+ "report_name": "Total Paid Amount",
+ "show_percentage_stats": 1,
+ "stats_time_interval": "Daily",
+ "type": "Report"
+}
