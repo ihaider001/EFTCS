@@ -415,7 +415,9 @@ fixtures = [
                    "Sales Order-delivery_date-reqd",
                    "Sales Invoice-customer_address-reqd",
                    "Sales Invoice-company_address-reqd",
-                   "Quotation-main-default_print_format"
+                   "Quotation-main-default_print_format",
+                   "Purchase Order-tc_name-reqd",
+                   "Purchase Order-payment_terms_template-reqd"
                    
                 ]]  
         ]},

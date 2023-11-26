@@ -37,9 +37,15 @@ def get_data(filters=None):
     conditions = ""
 
     if filters.get('from_date') and filters.get('to_date'):
-        conditions = "  AND transaction_date BETWEEN {0} AND {1}".format(
+        conditions += "AND transaction_date BETWEEN {0} AND {1}".format(
             frappe.db.escape(filters.get('from_date')), 
             frappe.db.escape(filters.get('to_date'))
+        )
+    
+    if filters.get('company'):
+        conditions += " AND Company = {0}".format(
+            frappe.db.escape(filters.get('company')), 
+
         )
 
     reject_quote = frappe.db.sql("""
@@ -58,9 +64,15 @@ def get_data(filters=None):
 
     total_quotations_count = reject_quote + total_quote
 
+    if total_quotations_count == 0:
+        others_percentage = 0
+        rejected_quote_percentage = 0
+    else:
+        others_percentage = (total_quote / total_quotations_count) * 100
+        rejected_quote_percentage = (reject_quote / total_quotations_count) * 100
     data = [
-        {'workflow_state': 'Others', 'count_quotation': total_quote, 'percentage': (total_quote / total_quotations_count) * 100},
-        {'workflow_state': 'Reject By Customer', 'count_quotation': reject_quote, 'percentage': (reject_quote / total_quotations_count) * 100}
+        {'workflow_state': 'Others', 'count_quotation': total_quote, 'percentage': others_percentage},
+        {'workflow_state': 'Reject By Customer', 'count_quotation': reject_quote, 'percentage': rejected_quote_percentage}
     ]
 
     return data
