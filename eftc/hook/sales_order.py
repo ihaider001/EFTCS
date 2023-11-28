@@ -182,6 +182,6 @@ def get_number_format_info(format: str) -> tuple[str, str, int]:
 
 def after_insert(doc,method):
     from eftc.hook.quotation import set_qr_code_url
-    url=set_qr_code_url("Sales Order",doc.name,"Sales Order","qr_code_url")
+    url=set_qr_code_url("Sales%20Order",doc.name,"Sales%20Order","qr_code_url")
     doc.qr_code_url=url
     doc.save()

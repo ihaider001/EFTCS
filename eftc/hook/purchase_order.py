@@ -43,6 +43,6 @@ def convert_number(doc,method):
 
 def after_insert(doc,method):
     from eftc.hook.quotation import set_qr_code_url
-    url=set_qr_code_url("Purchase Order",doc.name,"Purchase Order","qr_code_url")
+    url=set_qr_code_url("Purchase%20Order",doc.name,"Purchase%20Order","qr_code_url")
     doc.qr_code_url=url
     doc.save()
