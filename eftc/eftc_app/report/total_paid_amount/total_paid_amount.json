@@ -16,7 +16,7 @@
  "filters": [],
  "idx": 0,
  "is_standard": "Yes",
- "modified": "2023-11-23 20:51:49.451301",
+ "modified": "2023-12-05 14:27:44.244470",
  "modified_by": "Administrator",
  "module": "EFTC APP",
  "name": "Total Paid Amount",
@@ -35,6 +35,9 @@
   },
   {
    "role": "Employee Self Service"
+  },
+  {
+   "role": "Sales User"
   }
  ]
 }

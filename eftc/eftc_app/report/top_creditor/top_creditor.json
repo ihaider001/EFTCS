@@ -9,7 +9,7 @@
  "filters": [],
  "idx": 0,
  "is_standard": "Yes",
- "modified": "2023-11-23 06:53:58.372220",
+ "modified": "2023-12-05 14:28:42.838309",
  "modified_by": "Administrator",
  "module": "EFTC APP",
  "name": "Top Creditor",
@@ -28,6 +28,9 @@
   },
   {
    "role": "Employee Self Service"
+  },
+  {
+   "role": "Sales User"
   }
  ]
 }

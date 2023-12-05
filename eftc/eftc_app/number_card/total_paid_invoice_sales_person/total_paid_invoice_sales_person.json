@@ -1,0 +1,22 @@
+{
+ "creation": "2023-12-05 12:50:15.450553",
+ "docstatus": 0,
+ "doctype": "Number Card",
+ "filters_json": "{\"company\":\"Environment Friend Training Center\",\"sales_person\":\"Administrator\"}",
+ "function": "Count",
+ "idx": 0,
+ "is_public": 0,
+ "is_standard": 1,
+ "label": "Total Paid Invoice Sales Person",
+ "modified": "2023-12-05 12:50:15.548715",
+ "modified_by": "Administrator",
+ "module": "EFTC APP",
+ "name": "Total Paid Invoice Sales Person",
+ "owner": "Administrator",
+ "report_field": "paid_amount",
+ "report_function": "Sum",
+ "report_name": "Top Paid Invoice",
+ "show_percentage_stats": 1,
+ "stats_time_interval": "Daily",
+ "type": "Report"
+}
