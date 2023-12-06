@@ -198,11 +198,8 @@ def prepare_data(
 					break
 		else:
 			s_list = get_sales_person()
-			print("~~~~~~~~~~~~~~~~~11~~~~~~~~~~~~~~~~~~~~~",len(s_list))
 			if len(s_list) >= 2:
-				print("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$")
 				s_list.pop(0)
-			print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",s_list)
 			for g in sales_users_data:
 				if g['parent'] == s_list[0]:
 					sales_users_data_.append(g)
@@ -307,20 +304,15 @@ def get_sales_person():
 	roles = frappe.get_roles(user)
 	if user != "Administrator":
 		sa_list = ["All"]
-		print("^11^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^666",frappe.session.user)
 		employee = frappe.db.get_value("Employee",{"user_id":frappe.session.user},"name")
-		print("^122^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^666",employee)
 		if employee:
 			sales_man = frappe.db.get_value("Sales Person",{"employee":employee},"name")
-			print("^133^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^666",sales_man)
 			if sales_man:
 				sa_list.append(sales_man)
-			print("data......................................",sa_list)
 			return sa_list
 		else:
 			return sa_list
 	else:
-		print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 		sa_list = frappe.db.get_all("Sales Person",{"is_group": 0},pluck = "name")
 		sa_list.insert(0, "All")
 		return sa_list
