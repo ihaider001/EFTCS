@@ -8,6 +8,12 @@
   },
   {
    "card": "Total Paid Amount"
+  },
+  {
+   "card": "Total Due Invoice Sales Person"
+  },
+  {
+   "card": "Total Paid Invoice Sales Person"
   }
  ],
  "charts": [
@@ -107,7 +113,7 @@
  "idx": 0,
  "is_default": 0,
  "is_standard": 1,
- "modified": "2023-11-23 20:55:16.897276",
+ "modified": "2023-12-05 12:50:15.594568",
  "modified_by": "Administrator",
  "module": "EFTC APP",
  "name": "Sales Dashboard",
