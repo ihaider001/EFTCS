@@ -1,0 +1,173 @@
+{
+ "chart_name": "Sales Person Target Achieved Variance",
+ "chart_type": "Report",
+ "creation": "2023-12-06 08:18:30.260946",
+ "custom_options": "{\"x_field\": \"sales_person\", \"chart_type\": \"Bar\", \"y_axis_fields\": [{\"idx\": 1, \"__islocal\": true, \"name\": \"row 1\", \"y_field\": \"target_jan_2023\", \"color\": \"#f7f263\"}, {\"idx\": 2, \"__islocal\": true, \"name\": \"row 2\", \"y_field\": \"jan_2023\", \"color\": \"#449CF0\"}, {\"idx\": 3, \"__islocal\": true, \"name\": \"row 3\", \"y_field\": \"variance_jan_2023\", \"color\": \"#CB2929\"}, {\"idx\": 4, \"__islocal\": true, \"name\": \"row 4\", \"y_field\": \"target_feb_2023\", \"color\": \"#f7f263\"}, {\"idx\": 5, \"__islocal\": true, \"name\": \"row 5\", \"y_field\": \"feb_2023\", \"color\": \"#449CF0\"}, {\"idx\": 6, \"__islocal\": true, \"name\": \"row 6\", \"y_field\": \"variance_feb_2023\", \"color\": \"#CB2929\"}, {\"idx\": 7, \"__islocal\": true, \"name\": \"row 7\", \"y_field\": \"target_mar_2023\", \"color\": \"#f7f263\"}, {\"idx\": 8, \"__islocal\": true, \"name\": \"row 8\", \"y_field\": \"mar_2023\", \"color\": \"#449CF0\"}, {\"idx\": 9, \"__islocal\": true, \"name\": \"row 9\", \"y_field\": \"variance_mar_2023\", \"color\": \"#CB2929\"}, {\"idx\": 10, \"__islocal\": true, \"name\": \"row 10\", \"y_field\": \"target_apr_2023\", \"color\": \"#f7f263\"}, {\"idx\": 11, \"__islocal\": true, \"name\": \"row 11\", \"y_field\": \"apr_2023\", \"color\": \"#449CF0\"}, {\"idx\": 12, \"__islocal\": true, \"name\": \"row 12\", \"y_field\": \"variance_apr_2023\", \"color\": \"#CB2929\"}, {\"idx\": 13, \"__islocal\": true, \"name\": \"row 13\", \"y_field\": \"target_may_2023\", \"color\": \"#f7f263\"}, {\"idx\": 14, \"__islocal\": true, \"name\": \"row 14\", \"y_field\": \"may_2023\", \"color\": \"#449CF0\"}, {\"idx\": 15, \"__islocal\": true, \"name\": \"row 15\", \"y_field\": \"variance_may_2023\", \"color\": \"#CB2929\"}, {\"idx\": 16, \"__islocal\": true, \"name\": \"row 16\", \"y_field\": \"target_jun_2023\", \"color\": \"#f7f263\"}, {\"idx\": 17, \"__islocal\": true, \"name\": \"row 17\", \"y_field\": \"jun_2023\", \"color\": \"#449CF0\"}, {\"idx\": 18, \"__islocal\": true, \"name\": \"row 18\", \"y_field\": \"variance_jun_2023\", \"color\": \"#CB2929\"}, {\"idx\": 19, \"__islocal\": true, \"name\": \"row 19\", \"y_field\": \"target_jul_2023\", \"color\": \"#f7f263\"}, {\"idx\": 20, \"__islocal\": true, \"name\": \"row 20\", \"y_field\": \"jul_2023\", \"color\": \"#449CF0\"}, {\"idx\": 21, \"__islocal\": true, \"name\": \"row 21\", \"y_field\": \"variance_jul_2023\", \"color\": \"#CB2929\"}, {\"idx\": 22, \"__islocal\": true, \"name\": \"row 22\", \"y_field\": \"target_aug_2023\", \"color\": \"#f7f263\"}, {\"idx\": 23, \"__islocal\": true, \"name\": \"row 23\", \"y_field\": \"aug_2023\", \"color\": \"#449CF0\"}, {\"idx\": 24, \"__islocal\": true, \"name\": \"row 24\", \"y_field\": \"variance_aug_2023\", \"color\": \"#CB2929\"}, {\"idx\": 25, \"__islocal\": true, \"name\": \"row 25\", \"y_field\": \"target_sep_2023\", \"color\": \"#f7f263\"}, {\"idx\": 26, \"__islocal\": true, \"name\": \"row 26\", \"y_field\": \"sep_2023\", \"color\": \"#449CF0\"}, {\"idx\": 27, \"__islocal\": true, \"name\": \"row 27\", \"y_field\": \"variance_sep_2023\", \"color\": \"#CB2929\"}, {\"idx\": 28, \"__islocal\": true, \"name\": \"row 28\", \"y_field\": \"target_oct_2023\", \"color\": \"#f7f263\"}, {\"idx\": 29, \"__islocal\": true, \"name\": \"row 29\", \"y_field\": \"oct_2023\", \"color\": \"#449CF0\"}, {\"idx\": 30, \"__islocal\": true, \"name\": \"row 30\", \"y_field\": \"variance_oct_2023\", \"color\": \"#CB2929\"}, {\"idx\": 31, \"__islocal\": true, \"name\": \"row 31\", \"y_field\": \"target_nov_2023\", \"color\": \"#f7f263\"}, {\"idx\": 32, \"__islocal\": true, \"name\": \"row 32\", \"y_field\": \"nov_2023\", \"color\": \"#449CF0\"}, {\"idx\": 33, \"__islocal\": true, \"name\": \"row 33\", \"y_field\": \"variance_nov_2023\", \"color\": \"#CB2929\"}, {\"idx\": 34, \"__islocal\": true, \"name\": \"row 34\", \"y_field\": \"target_dec_2023\", \"color\": \"#f7f263\"}, {\"idx\": 35, \"__islocal\": true, \"name\": \"row 35\", \"y_field\": \"dec_2023\", \"color\": \"#449CF0\"}, {\"idx\": 36, \"__islocal\": true, \"name\": \"row 36\", \"y_field\": \"variance_dec_2023\", \"color\": \"#CB2929\"}], \"y_fields\": [\"target_jan_2023\", \"jan_2023\", \"variance_jan_2023\", \"target_feb_2023\", \"feb_2023\", \"variance_feb_2023\", \"target_mar_2023\", \"mar_2023\", \"variance_mar_2023\", \"target_apr_2023\", \"apr_2023\", \"variance_apr_2023\", \"target_may_2023\", \"may_2023\", \"variance_may_2023\", \"target_jun_2023\", \"jun_2023\", \"variance_jun_2023\", \"target_jul_2023\", \"jul_2023\", \"variance_jul_2023\", \"target_aug_2023\", \"aug_2023\", \"variance_aug_2023\", \"target_sep_2023\", \"sep_2023\", \"variance_sep_2023\", \"target_oct_2023\", \"oct_2023\", \"variance_oct_2023\", \"target_nov_2023\", \"nov_2023\", \"variance_nov_2023\", \"target_dec_2023\", \"dec_2023\", \"variance_dec_2023\"], \"colors\": [\"#f7f263\", \"#449CF0\", \"#CB2929\", \"#f7f263\", \"#449CF0\", \"#CB2929\", \"#f7f263\", \"#449CF0\", \"#CB2929\", \"#f7f263\", \"#449CF0\", \"#CB2929\", \"#f7f263\", \"#449CF0\", \"#CB2929\", \"#f7f263\", \"#449CF0\", \"#CB2929\", \"#f7f263\", \"#449CF0\", \"#CB2929\", \"#f7f263\", \"#449CF0\", \"#CB2929\", \"#f7f263\", \"#449CF0\", \"#CB2929\", \"#f7f263\", \"#449CF0\", \"#CB2929\", \"#f7f263\", \"#449CF0\", \"#CB2929\", \"#f7f263\", \"#449CF0\", \"#CB2929\"]}",
+ "docstatus": 0,
+ "doctype": "Dashboard Chart",
+ "filters_json": "{\"company\":\"Environment Friend Training Center\",\"fiscal_year\":\"2023\",\"doctype\":\"Sales Invoice\",\"period\":\"Monthly\",\"target_on\":\"Amount\",\"sales_person\":\"All\"}",
+ "group_by_type": "Count",
+ "idx": 0,
+ "is_public": 0,
+ "is_standard": 1,
+ "modified": "2023-12-06 08:18:30.312200",
+ "modified_by": "Administrator",
+ "module": "EFTC APP",
+ "name": "Sales Person Target Achieved Variance",
+ "number_of_groups": 0,
+ "owner": "Administrator",
+ "report_name": "Sales Person Target Variance Based On Item Group for chart",
+ "roles": [],
+ "time_interval": "Yearly",
+ "timeseries": 0,
+ "timespan": "Last Year",
+ "type": "Bar",
+ "use_report_chart": 0,
+ "x_field": "sales_person",
+ "y_axis": [
+  {
+   "color": "#f7f263",
+   "y_field": "target_jan_2023"
+  },
+  {
+   "color": "#449CF0",
+   "y_field": "jan_2023"
+  },
+  {
+   "color": "#CB2929",
+   "y_field": "variance_jan_2023"
+  },
+  {
+   "color": "#f7f263",
+   "y_field": "target_feb_2023"
+  },
+  {
+   "color": "#449CF0",
+   "y_field": "feb_2023"
+  },
+  {
+   "color": "#CB2929",
+   "y_field": "variance_feb_2023"
+  },
+  {
+   "color": "#f7f263",
+   "y_field": "target_mar_2023"
+  },
+  {
+   "color": "#449CF0",
+   "y_field": "mar_2023"
+  },
+  {
+   "color": "#CB2929",
+   "y_field": "variance_mar_2023"
+  },
+  {
+   "color": "#f7f263",
+   "y_field": "target_apr_2023"
+  },
+  {
+   "color": "#449CF0",
+   "y_field": "apr_2023"
+  },
+  {
+   "color": "#CB2929",
+   "y_field": "variance_apr_2023"
+  },
+  {
+   "color": "#f7f263",
+   "y_field": "target_may_2023"
+  },
+  {
+   "color": "#449CF0",
+   "y_field": "may_2023"
+  },
+  {
+   "color": "#CB2929",
+   "y_field": "variance_may_2023"
+  },
+  {
+   "color": "#f7f263",
+   "y_field": "target_jun_2023"
+  },
+  {
+   "color": "#449CF0",
+   "y_field": "jun_2023"
+  },
+  {
+   "color": "#CB2929",
+   "y_field": "variance_jun_2023"
+  },
+  {
+   "color": "#f7f263",
+   "y_field": "target_jul_2023"
+  },
+  {
+   "color": "#449CF0",
+   "y_field": "jul_2023"
+  },
+  {
+   "color": "#CB2929",
+   "y_field": "variance_jul_2023"
+  },
+  {
+   "color": "#f7f263",
+   "y_field": "target_aug_2023"
+  },
+  {
+   "color": "#449CF0",
+   "y_field": "aug_2023"
+  },
+  {
+   "color": "#CB2929",
+   "y_field": "variance_aug_2023"
+  },
+  {
+   "color": "#f7f263",
+   "y_field": "target_sep_2023"
+  },
+  {
+   "color": "#449CF0",
+   "y_field": "sep_2023"
+  },
+  {
+   "color": "#CB2929",
+   "y_field": "variance_sep_2023"
+  },
+  {
+   "color": "#f7f263",
+   "y_field": "target_oct_2023"
+  },
+  {
+   "color": "#449CF0",
+   "y_field": "oct_2023"
+  },
+  {
+   "color": "#CB2929",
+   "y_field": "variance_oct_2023"
+  },
+  {
+   "color": "#f7f263",
+   "y_field": "target_nov_2023"
+  },
+  {
+   "color": "#449CF0",
+   "y_field": "nov_2023"
+  },
+  {
+   "color": "#CB2929",
+   "y_field": "variance_nov_2023"
+  },
+  {
+   "color": "#f7f263",
+   "y_field": "target_dec_2023"
+  },
+  {
+   "color": "#449CF0",
+   "y_field": "dec_2023"
+  },
+  {
+   "color": "#CB2929",
+   "y_field": "variance_dec_2023"
+  }
+ ]
+}

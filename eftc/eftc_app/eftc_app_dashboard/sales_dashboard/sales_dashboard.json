@@ -98,6 +98,10 @@
   {
    "chart": "Total Tasks User Wise",
    "width": "Half"
+  },
+  {
+   "chart": "Sales Person Target Achieved Variance",
+   "width": "Full"
   }
  ],
  "creation": "2023-08-16 14:09:41.834872",
@@ -107,7 +111,7 @@
  "idx": 0,
  "is_default": 0,
  "is_standard": 1,
- "modified": "2023-11-23 20:55:16.897276",
+ "modified": "2023-12-06 08:26:06.542211",
  "modified_by": "Administrator",
  "module": "EFTC APP",
  "name": "Sales Dashboard",
