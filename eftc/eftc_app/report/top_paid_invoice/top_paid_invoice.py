@@ -3,7 +3,7 @@
 
 import frappe
 from frappe import _
-
+from eftc.eftc_app.report.sales_person_target_variance_based_on_item_group_for_chart.sales_person_target_variance_based_on_item_group_for_chart import get_sales_person
 
 def execute(filters=None):
     columns, data = [], []
@@ -55,16 +55,35 @@ def get_data(filters):
         ORDER BY
             si.grand_total DESC
             LIMIT 5 
-    """, as_dict=True)
+    """, as_dict=True,debug=True)
     return main
 
 def get_conditions(filters):
     conditions = []
-    if filters.get("sales_person"):
-        employee = frappe.db.get_value("Employee",{"user_id":filters['sales_person']},"name")
-        sales_man = frappe.db.get_value("Sales Person",{"employee":employee},"name")
-        if sales_man:
-            conditions.append(f"AND st.sales_person = {frappe.db.escape(sales_man)}")
+    if frappe.session.user == "Administrator":
+        if filters['sales_person'] == "All":
+            # conditions.append(f"AND st.is_group = 0 ")
+            pass
+
+        else:
+            conditions.append(f"AND st.sales_person = {frappe.db.escape(filters['sales_person'])}")
+    else :
+        if filters.get("sales_person") == "All":
+            
+            sales_person = get_sales_person()
+            for g in sales_person:
+                if g != "All":
+                    conditions.append(f"AND st.sales_person = {frappe.db.escape(g)}")
+                    break
+        else:
+            conditions.append(f"AND st.sales_person = {frappe.db.escape(filters['sales_person'])}")
+
+
+        
+        
     if filters.get("company"):
         conditions.append(f"AND si.company = {frappe.db.escape(filters['company'])}")
     return " ".join(conditions)
+
+
+
