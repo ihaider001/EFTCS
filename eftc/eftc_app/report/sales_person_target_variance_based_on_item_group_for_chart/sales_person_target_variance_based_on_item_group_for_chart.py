@@ -225,6 +225,7 @@ def prepare_data(
 			variance_key = "variance_{}".format(p_key)
 			details[target_key] = (d.get(target_qty_amt_field) * dist_data.get(p_key)) / 100
 			details[variance_key] = 0
+   
 			details["total_target"] += details[target_key]
 
 			for r in actual_data:
