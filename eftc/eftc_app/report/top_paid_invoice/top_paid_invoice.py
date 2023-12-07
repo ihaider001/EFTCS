@@ -72,7 +72,6 @@ def get_conditions(filters):
             
             sales_person = get_sales_person()
             for g in sales_person:
-                print(g)
                 if g != "All":
                     conditions.append(f"AND st.sales_person = {frappe.db.escape(g)}")
                     break
