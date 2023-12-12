@@ -105,8 +105,8 @@ Ensure that you have the following prerequisites installed and configured before
 
 ## Other Dependencies
 
--EFTC APP:  v0.0.1
--Frappe HR: v14.16.0 
+- EFTC APP:  v0.0.1
+- Frappe HR: v14.16.0 
 
 
 
