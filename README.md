@@ -98,7 +98,7 @@ Ensure that you have the following prerequisites installed and configured before
 ## Versions
 
 - ERPNext: Version 14.46.2
-  - [Installation Guide](https://github.com/frappe/erpnex)
+  - [Installation Guide](https://github.com/frappe/erpnext)
 
 - Frappe Framework: Version 14.46.2
   - [Installation Guide](https://frappeframework.com/docs/user/en/installation)
