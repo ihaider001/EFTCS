@@ -366,5 +366,54 @@
   "property_type": "Check",
   "row_name": null,
   "value": "1"
- }
+ },
+ {
+    "default_value": null,
+    "doc_type": "Address",
+    "docstatus": 0,
+    "doctype": "Property Setter",
+    "doctype_or_field": "DocField",
+    "field_name": "address_line1",
+    "is_system_generated": 0,
+    "modified": "2023-10-06 16:33:23.154819",
+    "module": null,
+    "name": "Address-address_type-reqd",
+    "property": "reqd",
+    "property_type": "Check",
+    "row_name": null,
+    "value": "0"
+   },
+   {
+    "default_value": null,
+    "doc_type": "Address",
+    "docstatus": 0,
+    "doctype": "Property Setter",
+    "doctype_or_field": "DocField",
+    "field_name": "city",
+    "is_system_generated": 0,
+    "modified": "2023-10-06 16:33:23.154819",
+    "module": null,
+    "name": "Address-city-reqd",
+    "property": "reqd",
+    "property_type": "Check",
+    "row_name": null,
+    "value": "0"
+   },
+
+   {
+    "default_value": null,
+    "doc_type": "Address",
+    "docstatus": 0,
+    "doctype": "Property Setter",
+    "doctype_or_field": "DocField",
+    "field_name": "country",
+    "is_system_generated": 0,
+    "modified": "2023-10-06 16:33:23.154819",
+    "module": null,
+    "name": "Address-country-reqd",
+    "property": "reqd",
+    "property_type": "Check",
+    "row_name": null,
+    "value": "0"
+   }
 ]

@@ -49,7 +49,8 @@ doctype_js = {
     "Training Schedule":"public/js/training.js",
     "Sales Invoice":"public/js/sales_invoice.js",
      "Sales Order":"public/js/sales_order.js",
-     "Contract":"public/js/contract.js"
+     "Contract":"public/js/contract.js",
+     "Address":"public/js/address.js"
 }
 # application home page (will override Website Settings)
 # home_page = "login"
@@ -417,7 +418,10 @@ fixtures = [
                    "Sales Invoice-company_address-reqd",
                    "Quotation-main-default_print_format",
                    "Purchase Order-tc_name-reqd",
-                   "Purchase Order-payment_terms_template-reqd"
+                   "Purchase Order-payment_terms_template-reqd",
+                   "Address-city-reqd",
+                   "Address-country-reqd",
+                   "Address-address_type-reqd"
                    
                 ]]  
         ]},
