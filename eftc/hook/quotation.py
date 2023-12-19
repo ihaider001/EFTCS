@@ -138,7 +138,14 @@ def get_mobile(custom_sales_representative):
 
 def validate(doc,method):
     doc.customer_name_in_arabic = frappe.db.get_value("Customer", {"lead_name":doc.party_name}, "customer_name_in_arabic")
-    doc.customer_name = frappe.db.get_value("Customer", {"lead_name":doc.party_name}, "customer_name")
+    
+
+    if doc.quotation_to=="Customer":
+        doc.customer_name=doc.party_name
+
+    else:
+        doc.customer_name = frappe.db.get_value("Customer", {"lead_name":doc.party_name}, "customer_name")
+
     for item in doc.items:
         if item.rate == 0:
             frappe.throw("Item rate Cannot be zero! for item {" + item.item_code + "} for row "+str(item.idx))
