@@ -161,12 +161,12 @@ doc_events = {
         "on_submit":["eftc.hook.purchase_order.generate_qr_code",
                      "eftc.hook.purchase_order.convert_number"]
     },
-    # "Sales Invoice": {
-    #     "after_insert": "eftc.hook.sales_invoice.update_schedule",
-    #     "on_submit":["eftc.hook.sales_invoice.autoname",
-    #                 "eftc.hook.sales_invoice.convert_number"],
-    #     "on_trash": "eftc.hook.sales_invoice.on_submit"
-    # }
+    "Sales Invoice": {
+        "after_insert": "eftc.hook.sales_invoice.update_schedule",
+        "on_submit":["eftc.hook.sales_invoice.autoname",
+                    "eftc.hook.sales_invoice.convert_number"],
+        "on_trash": "eftc.hook.sales_invoice.on_submit"
+    }
 }
 
 # Scheduled Tasks
