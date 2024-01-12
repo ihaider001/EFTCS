@@ -212,7 +212,7 @@ def get_training_schedule(sales_order):
     data = frappe.db.sql("""SELECT DISTINCT ts.name, ts.clientcustomer_name AS customer
                 FROM `tabTraining Schedule` ts
                 INNER JOIN `tabAttendees Table` at ON at.parent = ts.name
-                WHERE at.sales_invoice IS NULL
+                WHERE (at.sales_invoice IS NULL or at.sales_invoice = "")
                 AND ts.docstatus != 2
                 AND ts.sales_order = '{0}';
                 """.format(sales_order),as_dict=True)
