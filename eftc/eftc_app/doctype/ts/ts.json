@@ -96,10 +96,9 @@
    "fieldtype": "Section Break"
   }
  ],
- "in_create": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2023-11-24 14:41:53.962439",
+ "modified": "2024-01-16 09:33:46.909008",
  "modified_by": "Administrator",
  "module": "EFTC APP",
  "name": "TS",
@@ -120,7 +119,6 @@
    "write": 1
   }
  ],
- "read_only": 0,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
