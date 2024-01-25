@@ -37,13 +37,16 @@ def money_in_words_arabic(
         # note: `flt` returns 0 for invalid input and we don't want that
         number = float(number)
     except ValueError:
+        print('float return====================================',float(number))
         return ""
 
     number = flt(number)
     if number < 0:
-        return ""
+        print('flt return----------------------------------',flt(number))
+        # return ""
 
     d = get_defaults()
+    print('get_default-------------------------------------------')
     if not main_currency:
         main_currency = d.get("currency", "INR")
     if not fraction_currency:
