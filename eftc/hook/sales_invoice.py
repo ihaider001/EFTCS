@@ -39,9 +39,9 @@ def money_in_words_arabic(
     except ValueError:
         return ""
 
-    number = flt(number)
-    if number < 0:
-        return ""
+    # number = flt(number)
+    # if number < 0:
+        # return ""
 
     d = get_defaults()
     if not main_currency:
